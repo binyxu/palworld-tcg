@@ -8,6 +8,7 @@ const { validateDeck, randomDeck } = require('./engine/decks');
 const { PRESETS } = require('./engine/presets');
 const { PUZZLES } = require('./puzzles');
 const { PuzzleAI } = require('./solver');
+const { TUTORIALS, TutorAI } = require('./tutorials');
 // 稀有版本：rare=max 每张都用最高稀有度版本；rare=mix 随机混入稀有版本
 const RARITY = (() => { try { return JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'public', 'rarity.json'), 'utf8')); } catch (e) { return {}; } })();
 const RTIER = { SSS: 9, SSP: 8, TSP: 7, SP: 7, OSR: 6, PR: 5, TSR: 4, SR: 4, TDR: 3, RR: 2, R: 1 };
@@ -45,7 +46,7 @@ const GAMES_OLD = path.join(__dirname, '..', 'games');
 fs.mkdirSync(GAMES, { recursive: true });
 function saveGame(room) {
   const g = room.game; if (!g) return;
-  const rec = { id: room.gid, created: room.created, updated: Date.now(), pve: room.pve ? (room.puzzle ? 'puzzle:' + room.puzzle.id : room.gp ? 'gp' : room.level) : null, names: g.init.names,
+  const rec = { id: room.gid, created: room.created, updated: Date.now(), pve: room.pve ? (room.tutorial ? 'tutorial:' + room.tutorial.id : room.puzzle ? 'puzzle:' + room.puzzle.id : room.gp ? 'gp' : room.level) : null, names: g.init.names,
     decks: g.init.decks, seed: g.init.seed, scenario: g.init.scenario || null, hist: g.hist, undoLog: room.undoLog, over: g.over, turn: g.turnNo };
   fs.writeFile(path.join(GAMES, room.gid + '.json'), JSON.stringify(rec), () => {});
 }
@@ -94,6 +95,7 @@ const server = http.createServer((req, res) => {
     let steps = []; try { steps = JSON.parse(fs.readFileSync(path.join(__dirname, 'puzzle_guides.json'), 'utf8'))[p.id] || []; } catch (e) { }
     return send(res, 200, JSON.stringify({ guide: p.guide, steps }), MIME['.json']);
   }
+  if (url.pathname === '/api/tutorials') return send(res, 200, JSON.stringify(TUTORIALS.map(t => ({ id: t.id, no: t.no, title: t.title, desc: t.desc }))), MIME['.json']);
   if (url.pathname === '/api/presets') {
     return send(res, 200, JSON.stringify(PRESETS), MIME['.json']);
   }
@@ -197,7 +199,7 @@ class Room {
   }
   broadcast() {
     saveGame(this);
-    if (this.pve && !this.puzzle && this.game && this.game.over && !this.overEmote) {
+    if (this.pve && !this.puzzle && !this.tutorial && this.game && this.game.over && !this.overEmote) {
       this.overEmote = true;
       if (Math.random() < 0.7) setTimeout(() => this.seats[0] && this.emote(1, 'taunt', this.game.over.winner === 1 ? [2, 6, 16][Math.floor(Math.random() * 3)] : [1, 2][Math.floor(Math.random() * 2)]), 2600);
     }
@@ -208,7 +210,7 @@ class Room {
     }
     for (let i = 0; i < 2; i++) {
       const s = this.seats[i];
-      if (s && s.ws) s.ws.send({ type: 'state', room: this.code, state: this.game ? Object.assign(viewFor(this.game, i, { all: !!this.puzzle }), this.puzzle ? { puzzle: { id: this.puzzle.id, title: this.puzzle.title, desc: this.puzzle.desc, hint: this.puzzle.hint, limit: this.game.limit }, deckTop: this.game.p.map(p => p.deck.slice(0, 10).map(c => c.id)) } : {}, { gid: this.gid, pve: this.pve, gp: this.gp ? { style: this.gp.style, result: this.gp.result || null } : undefined, undos: this.undos[i], canUndo: this.canUndo(i), canCancel: this.canCancel(i), undoReq: this.undoReq === null ? null : this.undoReq === i ? 'mine' : 'theirs' }) : null, seats: this.seats.map(x => x && { name: x.name, ready: !!x.deck, online: !!(x.ws && x.ws.open) }) });
+      if (s && s.ws) s.ws.send({ type: 'state', room: this.code, state: this.game ? Object.assign(viewFor(this.game, i, { all: !!this.puzzle }), this.tutorial ? { tutorial: { id: this.tutorial.id, no: this.tutorial.no, title: this.tutorial.title, steps: this.tutorial.steps, total: TUTORIALS.length, next: (TUTORIALS[this.tutorial.no] || {}).id || null }, deckTop: this.game.p.map(p => p.deck.slice(0, 3).map(c => c.id)) } : {}, this.puzzle ? { puzzle: { id: this.puzzle.id, title: this.puzzle.title, desc: this.puzzle.desc, hint: this.puzzle.hint, limit: this.game.limit }, deckTop: this.game.p.map(p => p.deck.slice(0, 10).map(c => c.id)) } : {}, { gid: this.gid, pve: this.pve, gp: this.gp ? { style: this.gp.style, result: this.gp.result || null } : undefined, undos: this.undos[i], canUndo: this.canUndo(i), canCancel: this.canCancel(i), undoReq: this.undoReq === null ? null : this.undoReq === i ? 'mine' : 'theirs' }) : null, seats: this.seats.map(x => x && { name: x.name, ready: !!x.deck, online: !!(x.ws && x.ws.open) }) });
     }
     this.scheduleAI();
   }
@@ -251,6 +253,16 @@ server.on('upgrade', (req, socket) => {
     let m; try { m = JSON.parse(raw); } catch (e) { return; }
     try {
       if (m.type === 'pve' || m.type === 'create' || m.type === 'join') {
+        if (m.type === 'pve' && m.tutorial) {
+          const T = TUTORIALS.find(x => x.id === m.tutorial); if (!T) return err('教程不存在');
+          room = new Room(true); seat = 0;
+          room.seats[0] = { name: String(m.name || '玩家').slice(0, 16), deck: [], ws, token: m.token };
+          room.seats[1] = { name: '教练', deck: [] };
+          room.ai = new TutorAI(T.opp); room.level = 'tutorial'; room.tutorial = T; room.undos = [99, 0];
+          const sc = JSON.parse(JSON.stringify(T.sc)); sc.players[0].name = room.seats[0].name;
+          room.start(sc, 7);
+          return;
+        }
         if (m.type === 'pve' && m.puzzle) {
           const pz = PUZZLES.find(x => x.id === m.puzzle); if (!pz) return err('残局不存在');
           room = new Room(true); seat = 0;
@@ -331,7 +343,7 @@ server.on('upgrade', (req, socket) => {
         if (now - room.emoteT[seat] < 1500) return; room.emoteT[seat] = now;
         room.emote(seat, kind, i);
         // 人机：AI 偶尔回应（残局对手不说话）
-        if (room.pve && !room.puzzle && room.game && Math.random() < 0.6) {
+        if (room.pve && !room.puzzle && !room.tutorial && room.game && Math.random() < 0.6) {
           const g = room.game, winning = !g.over && g.p[1].life >= g.p[0].life, R = EMOTES.aiReply;
           let k2, j;
           if (g.over) { k2 = 'taunt'; j = g.over.winner === 1 ? 2 : 1; }
