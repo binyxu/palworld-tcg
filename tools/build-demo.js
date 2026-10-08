@@ -52,6 +52,9 @@ const idx = path.join(OUT, 'index.html');
 let html = fs.readFileSync(idx, 'utf8');
 html = html.replace(/<script /, '<script src="/demo.js"></script>\n<script ');
 fs.writeFileSync(idx, html);
+// 单机版文案：排行榜只有本机记录、账号不跨设备同步
+const TXT = { 'app.js': [['全服最佳', '本机最佳']], 'gp.js': [['全服排行榜', '本机排行榜'], ['登录账号后成绩会以账号名上榜，并在各设备同步', '单机版：成绩与存档保存在本机浏览器']] };
+for (const [f, reps] of Object.entries(TXT)) { const p = path.join(OUT, f); let t = fs.readFileSync(p, 'utf8'); for (const [a, b] of reps) { if (!t.includes(a)) throw new Error('文案未找到：' + a); t = t.split(a).join(b); } fs.writeFileSync(p, t); }
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
 fs.writeFileSync(path.join(OUT, '404.html'), html);
 console.log(`单机版已生成：${path.relative(process.cwd(), OUT) || '.'}  模块 ${Object.keys(mods).length} 个  server.bundle.js ${(out.length / 1024).toFixed(0)} KB`);
