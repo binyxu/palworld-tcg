@@ -20,7 +20,7 @@
 零依赖，不需要 `npm install`：
 
 ```bash
-git clone https://github.com/palworld-tcg/palworld-tcg.git
+git clone https://github.com/binyxu/palworld-tcg.git
 cd palworld-tcg
 npm start                      # 或 node server/server.js
 ```

@@ -63,7 +63,7 @@
   LocalWS.CONNECTING = 0; LocalWS.OPEN = 1; LocalWS.CLOSING = 2; LocalWS.CLOSED = 3;
   window.WebSocket = LocalWS;
   // ---------- 单机版界面调整 ----------
-  const REPO = 'https://github.com/palworld-tcg/palworld-tcg';
+  const REPO = 'https://github.com/binyxu/palworld-tcg';
   document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('demo');
     const pvp = document.querySelector('.m-pvp');
