@@ -1,5 +1,7 @@
 # 幻兽帕鲁卡牌游戏 · 粉丝对战平台
 
+[![GitHub stars](https://img.shields.io/github/stars/binyxu/palworld-tcg?style=social)](https://github.com/binyxu/palworld-tcg) 　觉得好玩的话，请点右上角 ⭐ Star 支持一下！
+
 > **非官方粉丝二创作品，完全非盈利。** 《幻兽帕鲁》《幻兽帕鲁卡牌游戏》及全部卡牌名称、卡面插画、规则文本、标志等，版权均归 Pocketpair, Inc. 及官方卡牌游戏权利方所有。详见下方[版权声明](#版权声明)。
 
 依据《幻兽帕鲁卡牌游戏 综合规则书 ver.1.00 & FAQ 第1弹》实现的网页对战平台：完整规则、组卡、人机对战（四档 AI）、真人联机、残局解谜、大奖赛、抽卡、复盘。
