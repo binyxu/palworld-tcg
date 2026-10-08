@@ -1,0 +1,4329 @@
+[
+{
+"id": "BP01-001",
+"variants": [
+"BP01-001",
+"BP01-001OSR",
+"BP01-001SSP",
+"PR-009"
+],
+"imgs": [
+"BP01/BP01-001.png",
+"BP01/BP01-001OSR.png",
+"BP01/BP01-001SSP.png",
+"PR/PR-009.png"
+],
+"ja": "荒ぶる溶岩竜 – アグニドラ",
+"en": "Jormuntide Ignis – Savage Lava Dragon",
+"kind": "pal",
+"lucky": true,
+"color": "red",
+"types": [
+"火",
+"龙"
+],
+"apts": [
+"生火"
+],
+"cost": 8,
+"power": 1700,
+"strike": 4,
+"quick": false,
+"main": "腾炎龙",
+"text_ja": "【起】【ターン１回】［③］または［手札を２枚捨てる］このカードをスタンドする。",
+"flavor": "二撃滅殺。"
+},
+{
+"id": "BP01-002",
+"variants": [
+"BP01-002",
+"BP01-002OSR",
+"BP01-002SP"
+],
+"imgs": [
+"BP01/BP01-002.png",
+"BP01/BP01-002OSR.png",
+"BP01/BP01-002SP.png"
+],
+"ja": "業火の翼 – スザク",
+"en": "Suzaku – Hellfire Wings",
+"kind": "pal",
+"lucky": true,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火"
+],
+"cost": 7,
+"power": 1200,
+"strike": 3,
+"quick": false,
+"main": "朱雀",
+"text_ja": "【永】あなたの赤のカードがパルにバトルダメージ以外の【ダメージ】を与える際、かわりに＋200した【ダメージ】を与える(自分の能力も強化する)。\n【自】【登場時】パルを１枚まで選び、700【ダメージ】。",
+"flavor": "紅の翼は風を起こし、風は業火を呼ぶだろう。"
+},
+{
+"id": "BP01-003",
+"variants": [
+"BP01-003",
+"BP01-003SR"
+],
+"imgs": [
+"BP01/BP01-003.png",
+"BP01/BP01-003SR.png"
+],
+"ja": "赤い怒りんぼ – シャーマンダー",
+"en": "Gobfin Ignis – Blazing Hothead",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火",
+"制造",
+"搬运"
+],
+"cost": 4,
+"power": 400,
+"strike": 2,
+"quick": false,
+"main": "红小鲨",
+"text_ja": "【永】あなたの他の赤のパルすべての【戦闘力】＋300。",
+"flavor": "煮えたぎる怒りは力となる。"
+},
+{
+"id": "BP01-004",
+"variants": [
+"BP01-004",
+"BP01-004SR"
+],
+"imgs": [
+"BP01/BP01-004.png",
+"BP01/BP01-004SR.png"
+],
+"ja": "刹那の刃 – ツジギリ",
+"en": "Bushi – Ephemeral Blade",
+"kind": "pal",
+"lucky": true,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火",
+"资源",
+"制造",
+"搬运"
+],
+"cost": 5,
+"power": 800,
+"strike": 2,
+"quick": true,
+"main": "浪刃武士",
+"text_ja": "【自】このカードがアタックしたバトル終了時、このカードを手札に戻してよい。\n【起】妨害（【手札】【クイック】［①、このカードを捨てる］または［このカードと他の手札を１枚捨てる］相手のアタックを失敗させる。バトルダメージは発生しない）",
+"flavor": "気づけるのは、斬られたという事実だけ。"
+},
+{
+"id": "BP01-005",
+"variants": [
+"BP01-005",
+"BP01-005SR"
+],
+"imgs": [
+"BP01/BP01-005.png",
+"BP01/BP01-005SR.png"
+],
+"ja": "鉱石の暴食獣 – ボルカノン",
+"en": "Reptyro – Ore Gorger",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火",
+"地"
+],
+"apts": [
+"生火",
+"资源"
+],
+"cost": 8,
+"power": 1500,
+"strike": 3,
+"quick": false,
+"main": "熔岩兽",
+"text_ja": "【自】【登場時】【素材】を３個得る。\n【起】【ターン１回】［【素材】を３個消費］あなたの山札を上から５枚見て、◇８以下のギアを１枚まで選んで登場させ、残りのカードと山札を切る。",
+"flavor": "鉱山には膨大な力が眠っている。その獣は鉱山を貪る。"
+},
+{
+"id": "BP01-006",
+"variants": [
+"BP01-006",
+"BP01-006SR",
+"PR-011"
+],
+"imgs": [
+"BP01/BP01-006.png",
+"BP01/BP01-006SR.png",
+"PR/PR-011.png"
+],
+"ja": "勇気のともし火 – キツネビ",
+"en": "Foxparks – Light of Courage",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "火绒狐",
+"text_ja": "【自】勇敢300（【アタック時】ターン終了時まで、このカードの【戦闘力】＋300）",
+"flavor": "暗闇に包まれても、そのともし火が勇気をくれる。"
+},
+{
+"id": "BP01-007",
+"variants": [
+"BP01-007",
+"BP01-007SR"
+],
+"imgs": [
+"BP01/BP01-007.png",
+"BP01/BP01-007SR.png"
+],
+"ja": "竜を穿つ牙 – シラヌイ",
+"en": "Kitsun – Wyrmbane Fangs",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火"
+],
+"cost": 5,
+"power": 400,
+"strike": 2,
+"quick": false,
+"main": "苍焰狼",
+"text_ja": "【自】【登場時】◇７以上のパルを１枚まで選び、1200【ダメージ】。",
+"flavor": "一火が分かれて両火となり、不知火の牙は竜をも穿つ。"
+},
+{
+"id": "BP01-008",
+"variants": [
+"BP01-008"
+],
+"imgs": [
+"BP01/BP01-008.png"
+],
+"ja": "触るな危険 – ボルトラ",
+"en": "Sparkit – Hazardous Contact",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"雷"
+],
+"apts": [
+"发电",
+"制造",
+"搬运",
+"牧场"
+],
+"cost": 3,
+"power": 400,
+"strike": 1,
+"quick": false,
+"main": "伏特喵",
+"text_ja": "【自】【登場時】スタンド状態のパルを１枚まで選び、500【ダメージ】。",
+"flavor": "乾燥してる日は、いつもぴりぴり。"
+},
+{
+"id": "BP01-009",
+"variants": [
+"BP01-009"
+],
+"imgs": [
+"BP01/BP01-009.png"
+],
+"ja": "勇猛迅雷 – ライコーン",
+"en": "Univolt – Valiant Thunderclap",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"雷"
+],
+"apts": [
+"发电",
+"资源"
+],
+"cost": 4,
+"power": 600,
+"strike": 2,
+"quick": false,
+"main": "雷角马",
+"text_ja": "【自】勇敢300（【アタック時】ターン終了時まで、このカードの【戦闘力】＋300）",
+"flavor": "勇猛なること、迅雷のごとし。"
+},
+{
+"id": "BP01-010",
+"variants": [
+"BP01-010"
+],
+"imgs": [
+"BP01/BP01-010.png"
+],
+"ja": "炎撃の翼 – イグニクス",
+"en": "Ragnahawk – Emberwing Striker",
+"kind": "pal",
+"lucky": true,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火",
+"搬运"
+],
+"cost": 6,
+"power": 1000,
+"strike": 2,
+"quick": false,
+"main": "燧火鸟",
+"text_ja": "【自】【アタック時】あなたの赤のパルをすべて選び、ターン終了時まで、【戦闘力】＋500/【打撃力】＋１。",
+"flavor": "炎撃の翼は、自軍の勝利を約束する。"
+},
+{
+"id": "BP01-011",
+"variants": [
+"BP01-011"
+],
+"imgs": [
+"BP01/BP01-011.png"
+],
+"ja": "健気な種火 – ヒノコジカ",
+"en": "Rooby – Brave Sparks",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火",
+"牧场"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "燎火鹿",
+"text_ja": "【自】まじめ400（【アサイン時】パルを１枚選び、ターン終了時まで、【戦闘力】＋400）",
+"flavor": "１日１本、枝を焼いた炭を食べるのが健康の秘訣。"
+},
+{
+"id": "BP01-012",
+"variants": [
+"BP01-012",
+"PR-001",
+"PR-001S"
+],
+"imgs": [
+"BP01/BP01-012.png",
+"PR/PR-001.png",
+"PR/PR-001S.png"
+],
+"ja": "灼熱のナミダ – ラヴィ",
+"en": "Flambelle – Scorching Tears",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火",
+"制造",
+"搬运"
+],
+"cost": 3,
+"power": 400,
+"strike": 1,
+"quick": false,
+"main": "融焰娘",
+"text_ja": "【自】【登場時】【素材】を２個得る。",
+"flavor": "流れる涙は灼熱のマグマ。涙の数だけ強くなる。"
+},
+{
+"id": "BP01-013",
+"variants": [
+"BP01-013"
+],
+"imgs": [
+"BP01/BP01-013.png"
+],
+"ja": "烈火の優駿 – サラブレイズ",
+"en": "Pyrin – Cinder Steed",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火",
+"资源"
+],
+"cost": 6,
+"power": 1200,
+"strike": 2,
+"quick": false,
+"main": "火麒麟",
+"text_ja": "",
+"flavor": "誰かが乗ると、火傷しないよう気を利かせる。"
+},
+{
+"id": "BP01-014",
+"variants": [
+"BP01-014",
+"PR-002",
+"PR-002S"
+],
+"imgs": [
+"BP01/BP01-014.png",
+"PR/PR-002.png",
+"PR/PR-002S.png"
+],
+"ja": "立ちはだかる獄炎 – ゴクエンオ",
+"en": "Blazehowl – Hellflame Defender",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火",
+"资源"
+],
+"cost": 7,
+"power": 1200,
+"strike": 3,
+"quick": true,
+"main": "狱焰王",
+"text_ja": "【起】妨害（【手札】【クイック】［①、このカードを捨てる］または［このカードと他の手札を１枚捨てる］相手のアタックを失敗させる。バトルダメージは発生しない）",
+"flavor": "灼熱のツメを恐れよ。立ちはだかるは獄炎の獅子。"
+},
+{
+"id": "BP01-015",
+"variants": [
+"BP01-015",
+"BP01-015SP"
+],
+"imgs": [
+"BP01/BP01-015.png",
+"BP01/BP01-015SP.png"
+],
+"ja": "設置型マシンガン",
+"en": "Mounted Machine Gun",
+"kind": "building",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [
+"制造"
+],
+"cost": 4,
+"power": 1000,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［【素材】をX個消費、パルを１枚アサイン］〈パルを１枚選び、500【ダメージ】。〉をX回行う。",
+"flavor": "銃架を用いた連続射撃が、襲撃者たちを薙ぎ払う。"
+},
+{
+"id": "BP01-016",
+"variants": [
+"BP01-016"
+],
+"imgs": [
+"BP01/BP01-016.png"
+],
+"ja": "原始的な炉",
+"en": "Primitive Furnace",
+"kind": "building",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [
+"生火"
+],
+"cost": 2,
+"power": 800,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［パルを１枚アサイン］【素材】を３個得て、１枚引く。\n【起】【ターン１回】［【素材】をX個消費］ターン終了時まで、あなたが次に手札からギアをプレイするためのコストはX減る。この能力で◇０以下にはならない。",
+"flavor": "原始的だけど、木炭や金属のインゴットが作れる。"
+},
+{
+"id": "BP01-017",
+"variants": [
+"BP01-017"
+],
+"imgs": [
+"BP01/BP01-017.png"
+],
+"ja": "聖火台",
+"en": "Flame Cauldron",
+"kind": "building",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [
+"生火"
+],
+"cost": 2,
+"power": 900,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【永】あなたの赤のパルすべての【戦闘力】＋200。\n【自】あなたの赤のパルが登場した時、【素材】を１個得る。",
+"flavor": "灯すと、正々堂々戦いそうな雰囲気になるらしい。"
+},
+{
+"id": "BP01-018",
+"variants": [
+"BP01-018"
+],
+"imgs": [
+"BP01/BP01-018.png"
+],
+"ja": "警鐘",
+"en": "Alarm Bell",
+"kind": "building",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": 1100,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［①、パルを１枚アサイン］そのターンにアサインしたパルをすべてスタンドする。ターン終了時まで、あなたはパルでアサインできず、可能な限りアタックする（この能力を発動した後に登場したパルも含む）。",
+"flavor": "鐘が鳴り響けば、パルたちは武器を持って立ち上がる。"
+},
+{
+"id": "BP01-019",
+"variants": [
+"BP01-019",
+"BP01-019SR"
+],
+"imgs": [
+"BP01/BP01-019.png",
+"BP01/BP01-019SR.png"
+],
+"ja": "キツネビのハーネス",
+"en": "Foxparks' Harness",
+"kind": "gear",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200。それのメインネームが《キツネビ》なら、ターン終了時まで、〈〉内の能力を与える。〈【自】【アタック時】パルを１枚まで選び、700【ダメージ】〉。\n",
+"flavor": "抱っこ用ハーネス。あなたのキツネビも火炎放射器。"
+},
+{
+"id": "BP01-020",
+"variants": [
+"BP01-020",
+"BP01-020SR"
+],
+"imgs": [
+"BP01/BP01-020.png",
+"BP01/BP01-020SR.png"
+],
+"ja": "ポンプ式ショットガン",
+"en": "Pump-Action Shotgun",
+"kind": "gear",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [],
+"cost": 7,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【自】【登場時】相手のパルをすべて選び、1200【ダメージ】。\n【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200。",
+"flavor": "連射性能の高いショットガン。ハンドグリップを前後させることで次弾を装填できる。"
+},
+{
+"id": "BP01-021",
+"variants": [
+"BP01-021"
+],
+"imgs": [
+"BP01/BP01-021.png"
+],
+"ja": "ジャンクハンドガン",
+"en": "Makeshift Handgun",
+"kind": "gear",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【自】【登場時】パルを１枚まで選び、500【ダメージ】。\n【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200。",
+"flavor": "ガラクタで手作りされた銃。性能はあまり高くない。"
+},
+{
+"id": "BP01-022",
+"variants": [
+"BP01-022"
+],
+"imgs": [
+"BP01/BP01-022.png"
+],
+"ja": "石のつるはし",
+"en": "Stone Pickaxe",
+"kind": "gear",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200し、【素材】を１個得る。",
+"flavor": "文明は石の道具から始まる。"
+},
+{
+"id": "BP01-023",
+"variants": [
+"BP01-023",
+"BP01-023OSR",
+"BP01-023SP"
+],
+"imgs": [
+"BP01/BP01-023.png",
+"BP01/BP01-023OSR.png",
+"BP01/BP01-023SP.png"
+],
+"ja": "アクセルの作戦",
+"en": "Axel's Strategy",
+"kind": "event",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [],
+"cost": 4,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "以下から１つ選ぶ。\n・パルを１枚選び、1500【ダメージ】。\n・パルをX枚まで選び、スタンドする。Xはあなたのギアの数。\n・相手の◇５以上のパルをすべて選び、ターン終了時まで、それらはブロックできない。",
+"flavor": "真の強者は、細かいことに動じない。"
+},
+{
+"id": "BP01-024",
+"variants": [
+"BP01-024",
+"PR-012"
+],
+"imgs": [
+"BP01/BP01-024.png",
+"PR/PR-012.png"
+],
+"ja": "宝箱発見！",
+"en": "Treasure Chest Found!",
+"kind": "event",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "あなたの山札を上から５枚見て、赤の建築物か、赤のギアを１枚まで選んで手札に加え、残りのカードと山札を切る。０枚選んだ時、【素材】を３個得る。",
+"flavor": "貴重な素材？ 武器の設計図？ レアなお宝だといいな！"
+},
+{
+"id": "BP01-025",
+"variants": [
+"BP01-025",
+"BP01-025OSR",
+"BP01-025SSP"
+],
+"imgs": [
+"BP01/BP01-025.png",
+"BP01/BP01-025OSR.png",
+"BP01/BP01-025SSP.png"
+],
+"ja": "竜を呼ぶ声 – オコチョ",
+"en": "Chillet – Dragon Whisperer",
+"kind": "pal",
+"lucky": true,
+"color": "blue",
+"types": [
+"冰",
+"龙"
+],
+"apts": [
+"冷却",
+"农耕"
+],
+"cost": 5,
+"power": 900,
+"strike": 2,
+"quick": false,
+"main": "疾旋鼬",
+"text_ja": "【自】【登場時】あなたの山札を上から１枚公開し、それが◇８以下の【竜】のパルなら、登場させてよい。登場させないなら、手札に加える。",
+"flavor": "にょろにょろイタチは竜と仲良し。"
+},
+{
+"id": "BP01-026",
+"variants": [
+"BP01-026",
+"BP01-026OSR",
+"BP01-026SP"
+],
+"imgs": [
+"BP01/BP01-026.png",
+"BP01/BP01-026OSR.png",
+"BP01/BP01-026SP.png"
+],
+"ja": "ペコペコガンナー – ペコドン",
+"en": "Relaxaurus – Hungry Gunner",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"水",
+"龙"
+],
+"apts": [
+"农耕",
+"搬运"
+],
+"cost": 7,
+"power": 1200,
+"strike": 3,
+"quick": false,
+"main": "佩克龙",
+"text_ja": "【自】【登場時】◇６以下のパルを１枚まで選び、レストする。このカードが拠点にいる限り、それはスタンドしない。",
+"flavor": "気の抜けた外見。乱射される体験。"
+},
+{
+"id": "BP01-027",
+"variants": [
+"BP01-027",
+"BP01-027OSR",
+"BP01-027SP"
+],
+"imgs": [
+"BP01/BP01-027.png",
+"BP01/BP01-027OSR.png",
+"BP01/BP01-027SP.png"
+],
+"ja": "逆巻く海竜 – レヴィドラ",
+"en": "Jormuntide – Surging Sea Serpent",
+"kind": "pal",
+"lucky": true,
+"color": "blue",
+"types": [
+"水",
+"龙"
+],
+"apts": [
+"农耕"
+],
+"cost": 8,
+"power": 1600,
+"strike": 3,
+"quick": false,
+"main": "覆海龙",
+"text_ja": "【自】【登場時】１枚引き、◇７以下のパルを１枚まで選び、レストする。それは次の相手のスタンドフェイズ中、スタンドしない。",
+"flavor": "逆巻く海から生還する者は少ない。生還した後、故郷が残っている者はもっと少ない。"
+},
+{
+"id": "BP01-028",
+"variants": [
+"BP01-028",
+"BP01-028SR",
+"PR-013"
+],
+"imgs": [
+"BP01/BP01-028.png",
+"BP01/BP01-028SR.png",
+"PR/PR-013.png"
+],
+"ja": "空への憧れ – ペンタマ",
+"en": "Pengullet – Yearning for the Sky",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"水",
+"冰"
+],
+"apts": [
+"冷却",
+"农耕",
+"制造",
+"搬运"
+],
+"cost": 4,
+"power": 600,
+"strike": 2,
+"quick": false,
+"main": "企丸丸",
+"text_ja": "【自】このカードが墓地に置かれた時、１枚引く。",
+"flavor": "それは、遺伝子に刻まれた空への未練。"
+},
+{
+"id": "BP01-029",
+"variants": [
+"BP01-029",
+"BP01-029SR"
+],
+"imgs": [
+"BP01/BP01-029.png",
+"BP01/BP01-029SR.png"
+],
+"ja": "水竜の舞 – アズレーン",
+"en": "Azurobe – Water Dragon Waltz",
+"kind": "pal",
+"lucky": true,
+"color": "blue",
+"types": [
+"水",
+"龙"
+],
+"apts": [
+"农耕"
+],
+"cost": 6,
+"power": 1200,
+"strike": 2,
+"quick": false,
+"main": "碧海龙",
+"text_ja": "【自】【登場時】１枚引き、パルを１枚まで選び、レストする。",
+"flavor": "水は自然の怒りであり、祝福である。"
+},
+{
+"id": "BP01-030",
+"variants": [
+"BP01-030",
+"BP01-030SR"
+],
+"imgs": [
+"BP01/BP01-030.png",
+"BP01/BP01-030SR.png"
+],
+"ja": "氷塊の暴食獣 – フロスカノン",
+"en": "Reptyro Cryst – Glacial Devourer",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"冰",
+"地"
+],
+"apts": [
+"冷却",
+"资源"
+],
+"cost": 8,
+"power": 1200,
+"strike": 3,
+"quick": false,
+"main": "寒霜兽",
+"text_ja": "【自】【登場時】１枚引く。\n【起】【ターン１回】［手札を１枚捨てる］あなたの山札を上から５枚見て、◇６以下の建築物を２枚まで選んで登場させ、残りのカードと山札を切る。",
+"flavor": "氷山には叡智が眠っている。その獣は氷山を貪る。"
+},
+{
+"id": "BP01-031",
+"variants": [
+"BP01-031",
+"BP01-031SR"
+],
+"imgs": [
+"BP01/BP01-031.png",
+"BP01/BP01-031SR.png"
+],
+"ja": "大海原の大戦士 – キャプペン",
+"en": "Penking – Mighty Warrior of the Deep",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"水",
+"冰"
+],
+"apts": [
+"冷却",
+"农耕",
+"制造",
+"搬运"
+],
+"cost": 5,
+"power": 600,
+"strike": 2,
+"quick": false,
+"main": "企丸王",
+"text_ja": "【永】あなたのメインネームが《ペンタマ》のパルすべての【戦闘力】＋700。",
+"flavor": "実はペンタマとは関係ないが、なぜかちやほやされている。"
+},
+{
+"id": "BP01-032",
+"variants": [
+"BP01-032",
+"PR-003",
+"PR-003S"
+],
+"imgs": [
+"BP01/BP01-032.png",
+"PR/PR-003.png",
+"PR/PR-003S.png"
+],
+"ja": "ノリノリサーファー – カモノスケ",
+"en": "Fuack – Manic Wave Ripper",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"水"
+],
+"apts": [
+"农耕",
+"制造",
+"搬运"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "冲浪鸭",
+"text_ja": "【自】このカードがアタックされた時、ターン終了時まで、このカードの【戦闘力】＋300。",
+"flavor": "とりあえず波に乗ってから考える。"
+},
+{
+"id": "BP01-033",
+"variants": [
+"BP01-033"
+],
+"imgs": [
+"BP01/BP01-033.png"
+],
+"ja": "雪山の番人 – ヒエティ",
+"en": "Wumpo – Frostpeak Sentinel",
+"kind": "pal",
+"lucky": true,
+"color": "blue",
+"types": [
+"冰"
+],
+"apts": [
+"冷却",
+"资源",
+"制造",
+"搬运"
+],
+"cost": 7,
+"power": 1500,
+"strike": 3,
+"quick": false,
+"main": "白绒雪怪",
+"text_ja": "【永】このカードがレスト状態なら、相手のパルすべての【打撃力】－１。",
+"flavor": "雪山を守る巨大な番人。毛の中身は秘密だ。"
+},
+{
+"id": "BP01-034",
+"variants": [
+"BP01-034"
+],
+"imgs": [
+"BP01/BP01-034.png"
+],
+"ja": "降り注ぐ元気 – チョロゾウ",
+"en": "Teafant – Fountain of Cheer",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"水"
+],
+"apts": [
+"农耕",
+"牧场"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "壶小象",
+"text_ja": "【自】まじめ400（【アサイン時】パルを１枚選び、ターン終了時まで、【戦闘力】＋400）",
+"flavor": "癒しのシャワーは、拠点の植物たちにも元気をくれる。"
+},
+{
+"id": "BP01-035",
+"variants": [
+"BP01-035"
+],
+"imgs": [
+"BP01/BP01-035.png"
+],
+"ja": "金運招来 – チルテト",
+"en": "Mau Cryst – Harbinger of Riches",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"冰"
+],
+"apts": [
+"冷却",
+"牧场"
+],
+"cost": 3,
+"power": 400,
+"strike": 1,
+"quick": false,
+"main": "冰丝特",
+"text_ja": "【自】このカードが「牧場」の建築物にアサインした時、１枚引く。",
+"flavor": "牧場にいるだけで、金運を上げてくれるらしい。"
+},
+{
+"id": "BP01-036",
+"variants": [
+"BP01-036"
+],
+"imgs": [
+"BP01/BP01-036.png"
+],
+"ja": "くるりと宙返り – ルミカイト",
+"en": "Celaray – Loop De Loop",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"水"
+],
+"apts": [
+"农耕",
+"搬运"
+],
+"cost": 3,
+"power": 400,
+"strike": 1,
+"quick": false,
+"main": "鲁米儿",
+"text_ja": "【自】【アタック時】１枚引き、あなたの手札を１枚選び、捨てる。",
+"flavor": "宙返りをひとつ。天と地と、世界のすべてを一巡り。"
+},
+{
+"id": "BP01-037",
+"variants": [
+"BP01-037"
+],
+"imgs": [
+"BP01/BP01-037.png"
+],
+"ja": "スイスイスイマー – シーペント",
+"en": "Surfent – Swift Swimmer",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"水"
+],
+"apts": [
+"农耕",
+"牧场"
+],
+"cost": 4,
+"power": 700,
+"strike": 2,
+"quick": false,
+"main": "滑水蛇",
+"text_ja": "",
+"flavor": "流線形のフォルムは、水上活動に適している。"
+},
+{
+"id": "BP01-038",
+"variants": [
+"BP01-038",
+"PR-004",
+"PR-004S"
+],
+"imgs": [
+"BP01/BP01-038.png",
+"PR/PR-004.png",
+"PR/PR-004S.png"
+],
+"ja": "凍てつく試練 – ツンドラー",
+"en": "Cryolinx – Arctic Ordeal",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"冰"
+],
+"apts": [
+"冷却",
+"资源",
+"制造",
+"搬运"
+],
+"cost": 6,
+"power": 900,
+"strike": 2,
+"quick": true,
+"main": "冰棘兽",
+"text_ja": "【起】妨害（【手札】【クイック】［①、このカードを捨てる］または［このカードと他の手札を１枚捨てる］相手のアタックを失敗させる。バトルダメージは発生しない）",
+"flavor": "険しい山岳に現れる、凍てつく試練。"
+},
+{
+"id": "BP01-039",
+"variants": [
+"BP01-039",
+"BP01-039SR"
+],
+"imgs": [
+"BP01/BP01-039.png",
+"BP01/BP01-039SR.png"
+],
+"ja": "アンティークなカーテン",
+"en": "Antique Curtain",
+"kind": "building",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 5,
+"power": 1400,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【自】【登場時】相手のパルをX枚まで選び、手札に戻す。Xは、あなたのカード名に《アンティーク》を含む建築物の、異なるカード名の数（たとえば、すでに《アンティークな鏡》が４枚ある状態で、《アンティークなカーテン》を出すと、２枚まで戻せる）。",
+"flavor": "由緒あるカーテン。部屋の印象ががらりと変わる。"
+},
+{
+"id": "BP01-040",
+"variants": [
+"BP01-040"
+],
+"imgs": [
+"BP01/BP01-040.png"
+],
+"ja": "アンティークなドレッサー",
+"en": "Antique Dresser",
+"kind": "building",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 4,
+"power": 1400,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［手札を１枚捨てる］カード名を１つ宣言する。あなたのカードをすべて選び、ターン終了時まで、それらに宣言したカード名を追加する。\n【起】【ターン１回】［手札をX枚捨てる］あなたのパルをX枚選び、ターン終了時まで、【戦闘力】＋1000/【打撃力】＋１。",
+"flavor": "由緒あるドレッサー。自分の姿を見直すチャンス。"
+},
+{
+"id": "BP01-041",
+"variants": [
+"BP01-041"
+],
+"imgs": [
+"BP01/BP01-041.png"
+],
+"ja": "温泉",
+"en": "Hot Spring",
+"kind": "building",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 6,
+"power": 1000,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［パルを１枚アサイン］◇６以下のパルを２枚まで選び、レストする。それらは次の相手のスタンドフェイズ中、スタンドしない。",
+"flavor": "みんなで入れば効果も倍増。"
+},
+{
+"id": "BP01-042",
+"variants": [
+"BP01-042"
+],
+"imgs": [
+"BP01/BP01-042.png"
+],
+"ja": "アンティークな鏡",
+"en": "Antique Mirror",
+"kind": "building",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 1,
+"power": 1000,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【自】【登場時】１枚引く。",
+"flavor": "由緒ある鏡。出かける前に身だしなみ。"
+},
+{
+"id": "BP01-043",
+"variants": [
+"BP01-043"
+],
+"imgs": [
+"BP01/BP01-043.png"
+],
+"ja": "スフィア製作台",
+"en": "Sphere Workbench",
+"kind": "building",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [
+"制造"
+],
+"cost": 2,
+"power": 900,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［パルを１枚アサイン］２枚引き、あなたの手札を１枚選び、捨てる。",
+"flavor": "メガとか、ギガとか。いい感じのスフィアが作れる。"
+},
+{
+"id": "BP01-044",
+"variants": [
+"BP01-044",
+"BP01-044SR"
+],
+"imgs": [
+"BP01/BP01-044.png",
+"BP01/BP01-044SR.png"
+],
+"ja": "ペンタマのロケットランチャー",
+"en": "Pengullet Rocket Launcher",
+"kind": "gear",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 4,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200。それのメインネームが《ペンタマ》なら、かわりに【戦闘力】＋500し、ターン終了時まで〈〉内の能力を与える。〈【起】［このカードをレスト］相手のパルをすべて選び、X【ダメージ】。Xはこのカードの【戦闘力】。このカードを墓地に置く〉。",
+"flavor": "ペンタマを天高く飛ばせてくれる砲筒。"
+},
+{
+"id": "BP01-045",
+"variants": [
+"BP01-045"
+],
+"imgs": [
+"BP01/BP01-045.png"
+],
+"ja": "グラップリングガン",
+"en": "Grappling Gun",
+"kind": "gear",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 5,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200し、〈〉内の能力を与える。〈【自】警戒（あなたのターン終了時、このカードをスタンドする）〉。",
+"flavor": "目的地を狙い撃って、自分を射撃地点まで引っ張れる。"
+},
+{
+"id": "BP01-046",
+"variants": [
+"BP01-046",
+"BP01-046OSR",
+"BP01-046SP"
+],
+"imgs": [
+"BP01/BP01-046.png",
+"BP01/BP01-046OSR.png",
+"BP01/BP01-046SP.png"
+],
+"ja": "ヴィクターの作戦",
+"en": "Victor's Strategy",
+"kind": "event",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "以下から１つ選ぶ。\n・あなたの山札を上から５枚見て、カードを１枚選んで手札に加え、残りのカードと山札を切る。\n・パルを１枚選び、手札に戻す。\n・X枚引く。Xはあなたの建築物の数。",
+"flavor": "すべては、最強のパルを創り出すために。"
+},
+{
+"id": "BP01-047",
+"variants": [
+"BP01-047",
+"BP01-047SR"
+],
+"imgs": [
+"BP01/BP01-047.png",
+"BP01/BP01-047SR.png"
+],
+"ja": "パルスフィア",
+"en": "Pal Sphere",
+"kind": "event",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 4,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "３枚引く。",
+"flavor": "パルはきっと君を助けてくれる。"
+},
+{
+"id": "BP01-048",
+"variants": [
+"BP01-048"
+],
+"imgs": [
+"BP01/BP01-048.png"
+],
+"ja": "オーロラの導き",
+"en": "Aurora Guide",
+"kind": "event",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": null,
+"strike": null,
+"quick": true,
+"main": null,
+"text_ja": "１枚引き、あなたの手札を１枚まで選び、山札の上に置く。",
+"flavor": "太陽風と地球の磁場が、天空に未来を描き出す。"
+},
+{
+"id": "BP01-049",
+"variants": [
+"BP01-049",
+"BP01-049OSR",
+"BP01-049SSP"
+],
+"imgs": [
+"BP01/BP01-049.png",
+"BP01/BP01-049OSR.png",
+"BP01/BP01-049SSP.png"
+],
+"ja": "女神の祝福 – リリクイン",
+"en": "Lyleen – Blessing of the Goddess",
+"kind": "pal",
+"lucky": true,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕",
+"制造"
+],
+"cost": 7,
+"power": 900,
+"strike": 3,
+"quick": false,
+"main": "百合女王",
+"text_ja": "【自】【登場時】【食材】を３個得る。\n【起】【ターン１回】［【食材】を３個消費］あなたの山札を上から５枚見て、◇６以下のパルを１枚まで選んで登場させ、残りのカードと山札を切る。",
+"flavor": "みなしごパルの面倒を見る優しいパル。しつけは全力のソーラーブラスト。"
+},
+{
+"id": "BP01-050",
+"variants": [
+"BP01-050",
+"BP01-050OSR",
+"BP01-050SP"
+],
+"imgs": [
+"BP01/BP01-050.png",
+"BP01/BP01-050OSR.png",
+"BP01/BP01-050SP.png"
+],
+"ja": "轟く剛矛 – ドリタス",
+"en": "Digtoise – Seismic Drillback",
+"kind": "pal",
+"lucky": true,
+"color": "green",
+"types": [
+"地"
+],
+"apts": [
+"资源"
+],
+"cost": 6,
+"power": 900,
+"strike": 2,
+"quick": false,
+"main": "碎岩龟",
+"text_ja": "【永】あなたのソウルが10枚以上なら、このカードの【戦闘力】＋1000/【打撃力】＋１。\n【起】【ターン１回】［【食材】を２個消費］ターン終了時まで、このカードの【戦闘力】＋500し、〈〉内の能力を得る。〈【自】突破（このカードのアタック中にバトル相手のパルが墓地に置かれた時、相手プレイヤーにも【ダメージ】）〉。",
+"flavor": "甲羅と牙は、矛盾を考察する最高の教材だ。"
+},
+{
+"id": "BP01-051",
+"variants": [
+"BP01-051",
+"BP01-051OSR",
+"BP01-051SP"
+],
+"imgs": [
+"BP01/BP01-051.png",
+"BP01/BP01-051OSR.png",
+"BP01/BP01-051SP.png"
+],
+"ja": "甘い祝福 – フラリーナ",
+"en": "Petallia – Sweet Blessings",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕",
+"制造",
+"搬运"
+],
+"cost": 6,
+"power": 700,
+"strike": 2,
+"quick": false,
+"main": "花丽娜",
+"text_ja": "【自】【登場時】ライフを１得て、ソウルを２枚選び、スタンドする。",
+"flavor": "花精霊の祝福は、優しく甘い匂いがする。"
+},
+{
+"id": "BP01-052",
+"variants": [
+"BP01-052",
+"BP01-052SR"
+],
+"imgs": [
+"BP01/BP01-052.png",
+"BP01/BP01-052SR.png"
+],
+"ja": "猪突粉砕 – イノボウ",
+"en": "Rushoar – Reckless Destruction",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"地"
+],
+"apts": [
+"资源"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "草莽猪",
+"text_ja": "【自】このカードが建築物にアタックした時、ターン終了時まで、このカードの【戦闘力】＋800。",
+"flavor": "その突撃は岩すら砕く。それが建築物でも変わらない。"
+},
+{
+"id": "BP01-053",
+"variants": [
+"BP01-053",
+"BP01-053SR"
+],
+"imgs": [
+"BP01/BP01-053.png",
+"BP01/BP01-053SR.png"
+],
+"ja": "花園の女王 – クインビーナ",
+"en": "Elizabee – Queen of the Flower Garden",
+"kind": "pal",
+"lucky": true,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕",
+"资源",
+"制造"
+],
+"cost": 5,
+"power": 700,
+"strike": 2,
+"quick": false,
+"main": "女皇蜂",
+"text_ja": "【永】あなたのメインネームが《ビーナイト》のパル１枚につき、このカードの【戦闘力】＋300。\n【起】［【食材】を１個消費］あなたの山札を上から１枚見て、それがメインネームが《ビーナイト》のパルなら、コストを◇２減らしてプレイしてよい。この能力で◇０以下にはならない。",
+"flavor": "気高き女王に、とこしえの栄光があらんことを。"
+},
+{
+"id": "BP01-054",
+"variants": [
+"BP01-054",
+"BP01-054SR"
+],
+"imgs": [
+"BP01/BP01-054.png",
+"BP01/BP01-054SR.png"
+],
+"ja": "黒鉄の要塞 – グラクレス",
+"en": "Warsect – Iron Fortress",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草",
+"地"
+],
+"apts": [
+"农耕",
+"资源",
+"制造",
+"搬运"
+],
+"cost": 8,
+"power": 1500,
+"strike": 3,
+"quick": false,
+"main": "铠格力斯",
+"text_ja": "【永】挑発（相手は挑発を持つカードを優先してアタック先に選ぶ）",
+"flavor": "全身を包む装甲は、圧倒的な強度と耐熱性を誇る。"
+},
+{
+"id": "BP01-055",
+"variants": [
+"BP01-055",
+"BP01-055SR"
+],
+"imgs": [
+"BP01/BP01-055.png",
+"BP01/BP01-055SR.png"
+],
+"ja": "魅惑の花形 – ヴィオレッタ",
+"en": "Vaelet – Bewitching Blossom",
+"kind": "pal",
+"lucky": true,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕",
+"制造",
+"搬运"
+],
+"cost": 8,
+"power": 1600,
+"strike": 3,
+"quick": false,
+"main": "薇莉塔",
+"text_ja": "【起】【ターン１回】［手札を１枚捨てる］そのターンに、このカードがアサインしていたら、このカードをスタンドする。",
+"flavor": "おしろをまもってくれる、おはなのせいれい。"
+},
+{
+"id": "BP01-056",
+"variants": [
+"BP01-056",
+"BP01-056SR"
+],
+"imgs": [
+"BP01/BP01-056.png",
+"BP01/BP01-056SR.png"
+],
+"ja": "期待の新入り – クルリス",
+"en": "Lifmunk – Promising Newbie",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕",
+"资源",
+"制造"
+],
+"cost": 3,
+"power": 500,
+"strike": 1,
+"quick": false,
+"main": "翠叶鼠",
+"text_ja": "",
+"flavor": "５歳から７歳児程度の知能がある。"
+},
+{
+"id": "BP01-057",
+"variants": [
+"BP01-057"
+],
+"imgs": [
+"BP01/BP01-057.png"
+],
+"ja": "芳醇な恵み – トドドドン",
+"en": "Dumud – Mellow Bounty",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"地",
+"水"
+],
+"apts": [
+"农耕",
+"资源",
+"搬运",
+"牧场"
+],
+"cost": 4,
+"power": 500,
+"strike": 2,
+"quick": false,
+"main": "趴趴鲶",
+"text_ja": "【自】【登場時】【食材】を２個得る。\n【自】このカードが「牧場」の建築物にアサインした時、あなたのソウルを１枚レスト状態で増やす。",
+"flavor": "最高品質のオイルは、高級レストランでも珍重される。"
+},
+{
+"id": "BP01-058",
+"variants": [
+"BP01-058",
+"PR-005",
+"PR-005S"
+],
+"imgs": [
+"BP01/BP01-058.png",
+"PR/PR-005.png",
+"PR/PR-005S.png"
+],
+"ja": "不思議な樹液 – ナエモチ",
+"en": "Gumoss – Curious Sprout",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草",
+"地"
+],
+"apts": [
+"农耕"
+],
+"cost": 4,
+"power": 600,
+"strike": 2,
+"quick": false,
+"main": "叶泥泥",
+"text_ja": "【自】【登場時】ターン終了時まで、このカードの【戦闘力】＋300し、〈〉内の能力を得る。〈【永】襲撃（このカードはスタンド状態のパルをアタックできる）〉。",
+"flavor": "樹液のような体をした不思議なパル。"
+},
+{
+"id": "BP01-059",
+"variants": [
+"BP01-059",
+"PR-006",
+"PR-006S"
+],
+"imgs": [
+"BP01/BP01-059.png",
+"PR/PR-006.png",
+"PR/PR-006S.png"
+],
+"ja": "唸る鋭矛 – ドリタス",
+"en": "Digtoise – Keen Needleback",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"地"
+],
+"apts": [
+"资源"
+],
+"cost": 5,
+"power": 800,
+"strike": 2,
+"quick": false,
+"main": "碎岩龟",
+"text_ja": "【起】【ターン１回】［【食材】を２個消費］ターン終了時まで、このカードの【戦闘力】＋500し、〈〉内の能力を得る。〈【自】突破（このカードのアタック中にバトル相手のパルが墓地に置かれた時、相手プレイヤーにも【ダメージ】）〉。",
+"flavor": "敵であれ、鉱物であれ、ドリルはすべてを粉砕する。"
+},
+{
+"id": "BP01-060",
+"variants": [
+"BP01-060"
+],
+"imgs": [
+"BP01/BP01-060.png"
+],
+"ja": "ウキウキワーカー – エテッパ",
+"en": "Tanzee – Cheerful Worker",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕",
+"资源",
+"制造",
+"搬运"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "新叶猿",
+"text_ja": "【自】まじめ400（【アサイン時】パルを１枚選び、ターン終了時まで、【戦闘力】＋400）",
+"flavor": "器用な手先で、いろんな建築物で活躍する。"
+},
+{
+"id": "BP01-061",
+"variants": [
+"BP01-061"
+],
+"imgs": [
+"BP01/BP01-061.png"
+],
+"ja": "花園の騎士 – ビーナイト",
+"en": "Beegarde – Knight of the Flower Garden",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕",
+"资源",
+"搬运",
+"牧场"
+],
+"cost": 3,
+"power": 400,
+"strike": 1,
+"quick": false,
+"main": "骑士蜂",
+"text_ja": "【永】このカードと同名のカードは、デッキに好きな枚数入れられる。\n【自】【登場時】【食材】を１個得る。あなたの「牧場」の建築物があるなら、ターン終了時まで、このカードの【戦闘力】＋500。",
+"flavor": "花園の騎士は、女王に忠誠と蜂蜜を捧げる。"
+},
+{
+"id": "BP01-062",
+"variants": [
+"BP01-062"
+],
+"imgs": [
+"BP01/BP01-062.png"
+],
+"ja": "南国の番人 – トロピティ",
+"en": "Wumpo Botan – Tropical Sentinel",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕",
+"资源",
+"制造",
+"搬运"
+],
+"cost": 7,
+"power": 1200,
+"strike": 3,
+"quick": true,
+"main": "绿苔绒怪",
+"text_ja": "【起】妨害（【手札】【クイック】［①、このカードを捨てる］または［このカードと他の手札を１枚捨てる］相手のアタックを失敗させる。バトルダメージは発生しない）",
+"flavor": "密林を守る巨大な番人。草の中身は秘密だ。"
+},
+{
+"id": "BP01-063",
+"variants": [
+"BP01-063",
+"BP01-063SR"
+],
+"imgs": [
+"BP01/BP01-063.png",
+"BP01/BP01-063SR.png"
+],
+"ja": "配合牧場",
+"en": "Breeding Farm",
+"kind": "building",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [
+"牧场"
+],
+"cost": 3,
+"power": 1100,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［【食材】を２個消費］あなたの山札を上から１枚公開し、それが◇８以下のパルなら手札に加え、そうでないなら墓地に置く。\n【起】【ターン１回】［【食材】を２個消費、パルを２枚アサイン］あなたの手札から◇８以下のパルを１枚選び、登場させる。",
+"flavor": "パルたちが一緒にケーキを食べるくらい親密になると、どうやら卵が産まれるようだ。"
+},
+{
+"id": "BP01-064",
+"variants": [
+"BP01-064",
+"BP01-064SR"
+],
+"imgs": [
+"BP01/BP01-064.png",
+"BP01/BP01-064SR.png"
+],
+"ja": "コーラ自動販売機",
+"en": "Cola Vending Machine",
+"kind": "building",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [],
+"cost": 6,
+"power": 1500,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［【食材】をX個消費、パルを１枚アサイン］ソウルを１枚選び、スタンドする。さらに、ソウルをXの３倍の枚数まで選び、スタンドする。",
+"flavor": "元気が出る飲み物が出てくるという噂がある。"
+},
+{
+"id": "BP01-065",
+"variants": [
+"BP01-065"
+],
+"imgs": [
+"BP01/BP01-065.png"
+],
+"ja": "エサ箱",
+"en": "Feed Box",
+"kind": "building",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": 900,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［【食材】を１個消費］あなたのソウルを１枚レスト状態で増やす。増やす前のソウルが10枚以上なら、ソウルを２枚選び、スタンドする。",
+"flavor": "パルたちはどこまでもついてきてくれる。エサさえあれば、の話だが。　～漂流者の手記　Day18"
+},
+{
+"id": "BP01-066",
+"variants": [
+"BP01-066"
+],
+"imgs": [
+"BP01/BP01-066.png"
+],
+"ja": "家畜牧場",
+"en": "Ranch",
+"kind": "building",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [
+"牧场"
+],
+"cost": 2,
+"power": 800,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［パルを１枚アサイン］【素材】か【食材】いずれかを３個得て、１枚引く。",
+"flavor": "放牧すると、アイテムを作ってくれるパルがいる。"
+},
+{
+"id": "BP01-067",
+"variants": [
+"BP01-067"
+],
+"imgs": [
+"BP01/BP01-067.png"
+],
+"ja": "パル通行止めの道路標識",
+"en": "No Pals Beyond Sign",
+"kind": "building",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [],
+"cost": 5,
+"power": 1100,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［パルを１枚アサイン］次の相手のターン終了時まで、このカードにアサインしたパルに〈〉内の能力を与える。〈【永】挑発（相手は挑発を持つカードを優先してアタック先に選ぶ）〉。",
+"flavor": "古代に使われた道路標識。現在は形骸化している。"
+},
+{
+"id": "BP01-068",
+"variants": [
+"BP01-068"
+],
+"imgs": [
+"BP01/BP01-068.png"
+],
+"ja": "ドリタスのハチマキ",
+"en": "Digtoise's Headband",
+"kind": "gear",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200。それのメインネームが《ドリタス》なら、【素材】か【食材】いずれかを２個得る。",
+"flavor": "ドリタスの勝負鉢巻。いつもより爆速で回ってくれる。"
+},
+{
+"id": "BP01-069",
+"variants": [
+"BP01-069"
+],
+"imgs": [
+"BP01/BP01-069.png"
+],
+"ja": "農業の帽子",
+"en": "Farming Hat",
+"kind": "gear",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200し、【食材】を１個得る。",
+"flavor": "畑仕事に向いた帽子。強い日光を防いでくれる。"
+},
+{
+"id": "BP01-070",
+"variants": [
+"BP01-070",
+"BP01-070OSR",
+"BP01-070SP"
+],
+"imgs": [
+"BP01/BP01-070.png",
+"BP01/BP01-070OSR.png",
+"BP01/BP01-070SP.png"
+],
+"ja": "リリィの作戦",
+"en": "Lily's Strategy",
+"kind": "event",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "以下から１つ選ぶ。\n・あなたのパルをすべて選び、ターン終了時まで、【戦闘力】＋1000。\n・建築物かギアを１枚選び、墓地に置く。\n・あなたのソウルを１枚レスト状態で増やす。",
+"flavor": "みなさまもパル愛護団体に入りませんか？"
+},
+{
+"id": "BP01-071",
+"variants": [
+"BP01-071",
+"PR-014"
+],
+"imgs": [
+"BP01/BP01-071.png",
+"PR/PR-014.png"
+],
+"ja": "タマゴ発見！",
+"en": "Found an Egg!",
+"kind": "event",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "あなたの山札を上から５枚見て、パルを１枚まで選んで手札に加え、残りのカードと山札を切る。０枚選んだ時、【食材】を３個得る。",
+"flavor": "平凡？ ゴツゴツ？ 凍てつく？ 暗黒？ どんなパルが孵るかな？"
+},
+{
+"id": "BP01-072",
+"variants": [
+"BP01-072"
+],
+"imgs": [
+"BP01/BP01-072.png"
+],
+"ja": "花精霊の祝福",
+"en": "Blessing of the Flower Spirit",
+"kind": "event",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "ライフを１得て、１枚引く。",
+"flavor": "大地に生命が溢れますように。"
+},
+{
+"id": "BP01-073",
+"variants": [
+"BP01-073",
+"BP01-073OSR",
+"BP01-073SSP"
+],
+"imgs": [
+"BP01/BP01-073.png",
+"BP01/BP01-073OSR.png",
+"BP01/BP01-073SSP.png"
+],
+"ja": "闇夜の翼 – ヘルガルダ",
+"en": "Helzephyr – Wings of the Moonless Night",
+"kind": "pal",
+"lucky": true,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"搬运"
+],
+"cost": 7,
+"power": 700,
+"strike": 3,
+"quick": false,
+"main": "雷冥鸟",
+"text_ja": "【永】夜行性（夜なら、このカードの【戦闘力】＋300）\n【自】あなたの〈夜行性〉を持つパルが登場した時、夜なら、それのコスト以下のパルを１枚まで選び、墓地に置く。１枚以上置いたら、そのターン終了時、このカードをレストする。",
+"flavor": "闇夜の翼は冥府の門。くぐりし魂は地獄に堕ちる。"
+},
+{
+"id": "BP01-074",
+"variants": [
+"BP01-074",
+"BP01-074OSR",
+"BP01-074SP"
+],
+"imgs": [
+"BP01/BP01-074.png",
+"BP01/BP01-074OSR.png",
+"BP01/BP01-074SP.png"
+],
+"ja": "絶望の遺伝子 – ゼノグリフ",
+"en": "Shadowbeak – Seed of Despair",
+"kind": "pal",
+"lucky": true,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"农耕"
+],
+"cost": 8,
+"power": 1300,
+"strike": 3,
+"quick": false,
+"main": "异构格里芬",
+"text_ja": "【永】このカードがレスト状態の間、夜である。\n【永】夜なら、あなたのパルの【自】は２回発動する。\n【自】あなたのターン終了時、あなたのパルを１枚まで選び、解体する。１枚以上解体したら、相手は自分のパルを１枚選び、墓地に置く。",
+"flavor": "狂気の末に生まれた、禁忌の存在。"
+},
+{
+"id": "BP01-075",
+"variants": [
+"BP01-075",
+"BP01-075OSR",
+"BP01-075SP"
+],
+"imgs": [
+"BP01/BP01-075.png",
+"BP01/BP01-075OSR.png",
+"BP01/BP01-075SP.png"
+],
+"ja": "深淵の魔導師 – クレメーオ",
+"en": "Katress – Abyssal Sorcerer",
+"kind": "pal",
+"lucky": true,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"制造",
+"搬运"
+],
+"cost": 6,
+"power": 900,
+"strike": 2,
+"quick": false,
+"main": "暗巫猫",
+"text_ja": "【起】【ターン１回】［他のパルを１枚解体］ターン終了時まで、このカードの【戦闘力】＋1000/【打撃力】＋１。\n【自】あなたのパルが解体された時、あなたの墓地のコストXのノーマルパルを１枚まで選び、レスト状態で登場させる。Xは解体されたパルのコスト－１の数。",
+"flavor": "陰なる力を操り、奇怪な術を披露する。"
+},
+{
+"id": "BP01-076",
+"variants": [
+"BP01-076",
+"BP01-076SR"
+],
+"imgs": [
+"BP01/BP01-076.png",
+"BP01/BP01-076SR.png"
+],
+"ja": "そこにいる！？ – ニャンバット",
+"en": "Tombat – Out of Nowhere!?",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"农耕",
+"资源",
+"搬运"
+],
+"cost": 5,
+"power": 600,
+"strike": 2,
+"quick": false,
+"main": "猫蝠怪",
+"text_ja": "【自】【登場時】あなたの山札を上から３枚公開し、パルを１枚まで選んで手札に加え、残りのカードを墓地に置く。",
+"flavor": "突如現れて翼を広げ、見せつけるように威嚇する。"
+},
+{
+"id": "BP01-077",
+"variants": [
+"BP01-077",
+"BP01-077SR"
+],
+"imgs": [
+"BP01/BP01-077.png",
+"BP01/BP01-077SR.png"
+],
+"ja": "蒼炎の優駿 – サラブラック",
+"en": "Pyrin Noct – Steed of Azure Flames",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗",
+"火"
+],
+"apts": [
+"生火",
+"资源"
+],
+"cost": 7,
+"power": 1100,
+"strike": 3,
+"quick": true,
+"main": "邪麒麟",
+"text_ja": "【永】夜行性（夜なら、このカードの【戦闘力】＋300）\n【起】妨害（【手札】【クイック】［①、このカードを捨てる］または［このカードと他の手札を１枚捨てる］相手のアタックを失敗させる。バトルダメージは発生しない）",
+"flavor": "誰かが乗ると、闇落ちしないよう気を利かせる。"
+},
+{
+"id": "BP01-078",
+"variants": [
+"BP01-078",
+"BP01-078SR"
+],
+"imgs": [
+"BP01/BP01-078.png",
+"BP01/BP01-078SR.png"
+],
+"ja": "女神の冥加 – ルナクイン",
+"en": "Lyleen Noct – Providence of the Goddess",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"农耕",
+"制造"
+],
+"cost": 8,
+"power": 1700,
+"strike": 3,
+"quick": false,
+"main": "黑月女王",
+"text_ja": "【起】［このカードをレスト、手札を１枚捨てる］あなたの墓地の◇６以下のパルを１枚選び、レスト状態で登場させる。",
+"flavor": "気品溢れる幽光の女神。冥加は回復？ 手痛いビンタ？"
+},
+{
+"id": "BP01-079",
+"variants": [
+"BP01-079",
+"BP01-079SR",
+"PR-015"
+],
+"imgs": [
+"BP01/BP01-079.png",
+"BP01/BP01-079SR.png",
+"PR/PR-015.png"
+],
+"ja": "夜になったら本気出す – ンダコアラ",
+"en": "Depresso – Late Night Hustler",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"资源",
+"制造",
+"搬运",
+"牧场"
+],
+"cost": 2,
+"power": 100,
+"strike": 1,
+"quick": false,
+"main": "瞅什魔",
+"text_ja": "【永】夜行性（夜なら、このカードの【戦闘力】＋300）\n【永】夜行性（夜なら、このカードの【戦闘力】＋300）",
+"flavor": "ゴキゲンな夜だ。カフェインをキメろ。"
+},
+{
+"id": "BP01-080",
+"variants": [
+"BP01-080",
+"BP01-080SR"
+],
+"imgs": [
+"BP01/BP01-080.png",
+"BP01/BP01-080SR.png"
+],
+"ja": "夢の始まり – ネムラム",
+"en": "Daedream – First Slumber",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"农耕",
+"制造",
+"搬运"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "寐魔",
+"text_ja": "【永】夜行性（夜なら、このカードの【戦闘力】＋300）",
+"flavor": "さあ目を閉じて。幸せな夢を見せてあげる。"
+},
+{
+"id": "BP01-081",
+"variants": [
+"BP01-081",
+"BP01-081SR",
+"PR-010"
+],
+"imgs": [
+"BP01/BP01-081.png",
+"BP01/BP01-081SR.png",
+"PR/PR-010.png"
+],
+"ja": "ハート泥棒 – ラブマンダー",
+"en": "Lovander – Heartstealer",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"资源",
+"制造",
+"搬运"
+],
+"cost": 5,
+"power": 800,
+"strike": 2,
+"quick": false,
+"main": "博爱蜥",
+"text_ja": "【自】【アタック時】あなたの手札を１枚捨ててもよい。捨てたら、ライフを１得る。",
+"flavor": "恋焦がれるは、一夜の愛。"
+},
+{
+"id": "BP01-082",
+"variants": [
+"BP01-082",
+"PR-007",
+"PR-007S"
+],
+"imgs": [
+"BP01/BP01-082.png",
+"PR/PR-007.png",
+"PR/PR-007S.png"
+],
+"ja": "夢の続き – ネムラム",
+"en": "Daedream – Deep Slumber",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"农耕",
+"制造",
+"搬运"
+],
+"cost": 3,
+"power": 400,
+"strike": 1,
+"quick": false,
+"main": "寐魔",
+"text_ja": "【永】夜行性（夜なら、このカードの【戦闘力】＋300）",
+"flavor": "楽しい夢は終わらない。夜はまだ続くのだから。"
+},
+{
+"id": "BP01-083",
+"variants": [
+"BP01-083"
+],
+"imgs": [
+"BP01/BP01-083.png"
+],
+"ja": "天空の襲撃者 – カバネドリ",
+"en": "Vanwyrm – Marauder of the Skies",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗",
+"火"
+],
+"apts": [
+"生火",
+"搬运"
+],
+"cost": 4,
+"power": 600,
+"strike": 2,
+"quick": false,
+"main": "烽歌龙",
+"text_ja": "【自】【登場時】パルを１枚まで選び、ターン終了時まで、【戦闘力】－300（【戦闘力】は０以下になっても墓地に置かれない）。",
+"flavor": "空からの襲撃は、強きものから強さを奪う。"
+},
+{
+"id": "BP01-084",
+"variants": [
+"BP01-084"
+],
+"imgs": [
+"BP01/BP01-084.png"
+],
+"ja": "闇に潜む蠍 – デスティング",
+"en": "Menasting – Darkness-Dwelling Scorpion",
+"kind": "pal",
+"lucky": true,
+"color": "purple",
+"types": [
+"暗",
+"地"
+],
+"apts": [
+"资源"
+],
+"cost": 5,
+"power": 700,
+"strike": 2,
+"quick": false,
+"main": "冥铠蝎",
+"text_ja": "【自】相打ち（このカードがバトル中に墓地に置かれた時、バトル相手のパルを墓地に置く）\n【自】このカードが墓地に置かれた時、あなたの墓地のノーマルパルを１枚まで選び、手札に戻す。",
+"flavor": "獲物を殻に吸収する。周囲には呻き声が響き続ける。"
+},
+{
+"id": "BP01-085",
+"variants": [
+"BP01-085"
+],
+"imgs": [
+"BP01/BP01-085.png"
+],
+"ja": "逢魔時の使者 – ソルレイス",
+"en": "Maraith – Twilight Messenger",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"农耕",
+"资源"
+],
+"cost": 6,
+"power": 900,
+"strike": 2,
+"quick": false,
+"main": "噬魂兽",
+"text_ja": "【永】このカードがレスト状態の間、夜である。\n【永】夜なら、相手のパルすべての【戦闘力】－200（【戦闘力】は０以下になっても墓地に置かれない）。",
+"flavor": "死期が近い生物が醸し出す、独特な匂いを好む。"
+},
+{
+"id": "BP01-086",
+"variants": [
+"BP01-086"
+],
+"imgs": [
+"BP01/BP01-086.png"
+],
+"ja": "無口なあの子 – ルナティ",
+"en": "Nox – The Silent One",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"农耕"
+],
+"cost": 3,
+"power": 500,
+"strike": 1,
+"quick": false,
+"main": "露娜蒂",
+"text_ja": "",
+"flavor": "無口でクール。仲良くなるとちょっぴり照れ屋。"
+},
+{
+"id": "BP01-087",
+"variants": [
+"BP01-087",
+"PR-008",
+"PR-008S"
+],
+"imgs": [
+"BP01/BP01-087.png",
+"PR/PR-008.png",
+"PR/PR-008S.png"
+],
+"ja": "閃く月光 – ツキカゲ",
+"en": "Loupmoon – Glinting Moonlight",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"制造"
+],
+"cost": 4,
+"power": 500,
+"strike": 2,
+"quick": false,
+"main": "月镰魔",
+"text_ja": "【自】【登場時】夜なら、スタンド状態の◇６以下のパルを１枚まで選び、墓地に置く。",
+"flavor": "月影は、闇に煌めく。"
+},
+{
+"id": "BP01-088",
+"variants": [
+"BP01-088",
+"BP01-088SR"
+],
+"imgs": [
+"BP01/BP01-088.png",
+"BP01/BP01-088SR.png"
+],
+"ja": "設置ランプ",
+"en": "Lamp",
+"kind": "building",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 4,
+"power": 1300,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［山札を上から３枚墓地に置く］次の相手のターン終了時まで、夜になる。\n【永】あなたのパルすべてに〈〉内の能力を与える。〈【永】夜行性（夜なら、このカードの【戦闘力】＋300）〉。",
+"flavor": "拠点を明るくしてくれる。夜でも安心して作業ができる。"
+},
+{
+"id": "BP01-089",
+"variants": [
+"BP01-089"
+],
+"imgs": [
+"BP01/BP01-089.png"
+],
+"ja": "低質なベッド",
+"en": "Shoddy Bed",
+"kind": "building",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": 700,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［山札を上から３枚墓地に置く］次の相手のターン終了時まで、夜になる。\n【自】あなたのターン終了時、あなたのレスト状態の〈夜行性〉を持つパルがいるなら、１枚引く。",
+"flavor": "夜に眠って元気になる。目が覚めると朝がくる。"
+},
+{
+"id": "BP01-090",
+"variants": [
+"BP01-090"
+],
+"imgs": [
+"BP01/BP01-090.png"
+],
+"ja": "中世の製薬台",
+"en": "Medieval Medicine Workbench",
+"kind": "building",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [
+"制造"
+],
+"cost": 4,
+"power": 1300,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［③、パルを１枚アサイン］あなたの墓地のコストX以下のパルを１枚選び、レスト状態で登場させる。Xはアサインしたパルのコスト＋２の数。",
+"flavor": "お薬をどうぞ。早く元気になりますように。"
+},
+{
+"id": "BP01-091",
+"variants": [
+"BP01-091"
+],
+"imgs": [
+"BP01/BP01-091.png"
+],
+"ja": "木の壁",
+"en": "Wooden Wall",
+"kind": "building",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": 300,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【永】挑発（相手は挑発を持つカードを優先してアタック先に選ぶ）\n【自】このカードが墓地に置かれた時、１枚引く。",
+"flavor": "侵入者を阻む壁だが、木だからもろい。ガウルフの息で吹き飛ばされるかもしれない。"
+},
+{
+"id": "BP01-092",
+"variants": [
+"BP01-092"
+],
+"imgs": [
+"BP01/BP01-092.png"
+],
+"ja": "鑑賞用ケージ",
+"en": "Viewing Cage",
+"kind": "building",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": 1300,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［パルを１枚アサイン］アサインしたパルを追放する。コストX以下のパルを１枚選び、追放する。Xはアサインしたパルのコスト＋２の数。\n【自】このカードが拠点から離れた時、このカードが追放しているパルをすべてオーナーの手札に戻す。",
+"flavor": "飾ったパルは鑑賞用で、作業や戦闘はできなくなる。"
+},
+{
+"id": "BP01-093",
+"variants": [
+"BP01-093",
+"BP01-093SR"
+],
+"imgs": [
+"BP01/BP01-093.png",
+"BP01/BP01-093SR.png"
+],
+"ja": "肉切り包丁",
+"en": "Meat Cleaver",
+"kind": "gear",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】［このカードをレスト、パルを１枚解体］あなたの山札を上から３枚公開し、カードを１枚選んで手札に加え、残りのカードを墓地に置く。",
+"flavor": "「なでる」コマンドが「解体」コマンドに変わる。解体したパルは戻ってこない。"
+},
+{
+"id": "BP01-094",
+"variants": [
+"BP01-094"
+],
+"imgs": [
+"BP01/BP01-094.png"
+],
+"ja": "ネムラムの首輪",
+"en": "Daedream's Necklace",
+"kind": "gear",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【自】【登場時】あなたの手札のメインネームが《ネムラム》のパルを１枚まで選び、登場させる。\n【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200。次の相手のターン終了時まで、夜になる。",
+"flavor": "手持ちにいるネムラムが、君と一緒に戦ってれる。"
+},
+{
+"id": "BP01-095",
+"variants": [
+"BP01-095",
+"BP01-095OSR",
+"BP01-095SP"
+],
+"imgs": [
+"BP01/BP01-095.png",
+"BP01/BP01-095OSR.png",
+"BP01/BP01-095SP.png"
+],
+"ja": "ゾーイの作戦",
+"en": "Zoe's Strategy",
+"kind": "event",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "以下から１つ選ぶ。\n・相手の【素材】か【食材】を合わせて５個まで選び、相手はそれらを失う。\n・あなたの墓地のパルを１枚まで選び、手札に戻す。相手は自分の手札を１枚選び、捨てる。\n・あなたのパルを１枚選び、解体する。１枚以上解体したら、相手のパルを１枚選び、墓地に置く。",
+"flavor": "密猟団の悪事に賛成ではないが強く口を出せていない。"
+},
+{
+"id": "BP01-096",
+"variants": [
+"BP01-096"
+],
+"imgs": [
+"BP01/BP01-096.png"
+],
+"ja": "ダークキャノン",
+"en": "Dark Cannon",
+"kind": "event",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": true,
+"main": null,
+"text_ja": "◇５以下のパルを１枚選び、墓地に置く。",
+"flavor": "その闇技は、闇のエネルギー弾で敵を打ち抜く。"
+},
+{
+"id": "BP01-097",
+"variants": [
+"BP01-097"
+],
+"imgs": [
+"BP01/BP01-097.png"
+],
+"ja": "闇商人",
+"en": "Black Marketeer",
+"kind": "event",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 5,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "あなたの墓地の〈妨害〉を持たないパルを２枚まで選び、手札に戻す。次の相手のターン終了時まで、夜になる。",
+"flavor": "宙吊り罠とキャンプファイアが嫌いらしい。"
+},
+{
+"id": "BP01-098",
+"variants": [
+"BP01-098"
+],
+"imgs": [
+"BP01/BP01-098.png"
+],
+"ja": "優しい輝き – シルフィア",
+"en": "Elphidran – Gentle Radiance",
+"kind": "pal",
+"lucky": false,
+"color": null,
+"types": [
+"龙"
+],
+"apts": [
+"资源"
+],
+"cost": 4,
+"power": 600,
+"strike": 2,
+"quick": false,
+"main": "精灵龙",
+"text_ja": "【自】【アタック時】あなたの手札を１枚公開してもよい。【竜】のパルを公開したら、ターン終了時まで、このカードの【戦闘力】＋500。",
+"flavor": "無邪気な聖竜は、優しい輝きを差し伸べる。"
+},
+{
+"id": "BP01-099",
+"variants": [
+"BP01-099"
+],
+"imgs": [
+"BP01/BP01-099.png"
+],
+"ja": "誇り高き牙 – ガウルフ",
+"en": "Direhowl – Proud Fang",
+"kind": "pal",
+"lucky": false,
+"color": null,
+"types": [
+"无"
+],
+"apts": [
+"农耕"
+],
+"cost": 3,
+"power": 500,
+"strike": 1,
+"quick": false,
+"main": "猎狼",
+"text_ja": "",
+"flavor": "はるか昔、ガウルフは人と共に狩りをしていた。"
+},
+{
+"id": "BP01-100",
+"variants": [
+"BP01-100",
+"BP01-100SR"
+],
+"imgs": [
+"BP01/BP01-100.png",
+"BP01/BP01-100SR.png"
+],
+"ja": "冒険の始まり",
+"en": "The Adventure Begins",
+"kind": "event",
+"lucky": false,
+"color": null,
+"types": [],
+"apts": [],
+"cost": 2,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "あなたがこのゲーム中、他のカードをプレイしていないなら、２枚引く。\nあなたの、カード名に《始まりの》を含む異なるカード名のパルが３種類以上あるなら、あなたのパルをすべて選び、ターン終了時まで、【戦闘力】＋1000/【打撃力】＋５。",
+"flavor": "島に上陸してすぐに、謎の生物を見つけた。　～漂流者の手記　Day1-2"
+},
+{
+"id": "TD01-001",
+"variants": [
+"TD01-001",
+"TD01-001TSP",
+"TD01-001TSR"
+],
+"imgs": [
+"TD01/TD01-001.png",
+"TD01/TD01-001TSP.png",
+"TD01/TD01-001TSR.png"
+],
+"ja": "爆走重戦車 – エレパンダ",
+"en": "Grizzbolt – Rumbling Tank",
+"kind": "pal",
+"lucky": true,
+"color": "red",
+"types": [
+"雷"
+],
+"apts": [
+"发电",
+"制造",
+"资源",
+"搬运"
+],
+"cost": 7,
+"power": 1600,
+"strike": 4,
+"quick": false,
+"main": "暴电熊",
+"text_ja": "【永】襲撃（このカードはスタンド状態のパルをアタックできる）",
+"flavor": "豪快な笑顔。屈強な体格。認めた相手の頼れる相棒。"
+},
+{
+"id": "TD01-002",
+"variants": [
+"TD01-002"
+],
+"imgs": [
+"TD01/TD01-002.png"
+],
+"ja": "刺激的で純真 – パチグリ",
+"en": "Jolthog – Shocking Yet Innocent",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"雷"
+],
+"apts": [
+"发电"
+],
+"cost": 2,
+"power": 300,
+"strike": 1,
+"quick": false,
+"main": "电棘鼠",
+"text_ja": "",
+"flavor": "衝撃を受けると、溜め込んだ電気を放出する。"
+},
+{
+"id": "TD01-003",
+"variants": [
+"TD01-003"
+],
+"imgs": [
+"TD01/TD01-003.png"
+],
+"ja": "溶岩日和 – マグピス",
+"en": "Kelpsea Ignis – Balmy Magma",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火",
+"牧场"
+],
+"cost": 3,
+"power": 500,
+"strike": 1,
+"quick": false,
+"main": "火灵儿",
+"text_ja": "",
+"flavor": "暑さが足りないなと思ったら、打ち溶岩がお勧めだ。"
+},
+{
+"id": "TD01-004",
+"variants": [
+"TD01-004"
+],
+"imgs": [
+"TD01/TD01-004.png"
+],
+"ja": "ほかほかだっこ – キツネビ",
+"en": "Foxparks – A Toasty Hug",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火"
+],
+"cost": 4,
+"power": 400,
+"strike": 2,
+"quick": true,
+"main": "火绒狐",
+"text_ja": "【起】妨害（【手札】【クイック】［①、このカードを捨てる］または［このカードと他の手札を１枚捨てる］相手のアタックを失敗させる。バトルダメージは発生しない）",
+"flavor": "熱い抱擁。うかつに近づくと、やけどするよ。"
+},
+{
+"id": "TD01-005",
+"variants": [
+"TD01-005",
+"TD01-005TSR"
+],
+"imgs": [
+"TD01/TD01-005.png",
+"TD01/TD01-005TSR.png"
+],
+"ja": "熱々の落し物 – ブルフェルノ",
+"en": "Arsox – Burning Spoils",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火",
+"资源"
+],
+"cost": 5,
+"power": 800,
+"strike": 2,
+"quick": false,
+"main": "炽焰牛",
+"text_ja": "【自】【登場時】【素材】を２個得る。",
+"flavor": "ぽかぽかのボディ。熱々の落とし物。"
+},
+{
+"id": "TD01-006",
+"variants": [
+"TD01-006"
+],
+"imgs": [
+"TD01/TD01-006.png"
+],
+"ja": "特攻隊長 – ライゾー",
+"en": "Mossanda Lux – Vanguard Captain",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"雷"
+],
+"apts": [
+"发电",
+"制造",
+"资源",
+"搬运"
+],
+"cost": 6,
+"power": 1100,
+"strike": 2,
+"quick": false,
+"main": "雷胖达",
+"text_ja": "【起】［【素材】を２個消費］ターン終了時まで、このカードの【戦闘力】＋500。",
+"flavor": "電気の力で限界を超える。最強の名を誇るグレパンダ。"
+},
+{
+"id": "TD01-007",
+"variants": [
+"TD01-007",
+"TD01-007TSR"
+],
+"imgs": [
+"TD01/TD01-007.png",
+"TD01/TD01-007TSR.png"
+],
+"ja": "マグマを統べる者 – ボルカイザー",
+"en": "Blazamut – Molten Sovereign",
+"kind": "pal",
+"lucky": true,
+"color": "red",
+"types": [
+"火"
+],
+"apts": [
+"生火",
+"资源"
+],
+"cost": 8,
+"power": 1600,
+"strike": 3,
+"quick": false,
+"main": "焰煌",
+"text_ja": "【自】【登場時】パルを１枚まで選び、1000【ダメージ】。",
+"flavor": "火山の噴火を産声として、マグマの王が降臨する。"
+},
+{
+"id": "TD01-008",
+"variants": [
+"TD01-008",
+"TD01-008TSR"
+],
+"imgs": [
+"TD01/TD01-008.png",
+"TD01/TD01-008TSR.png"
+],
+"ja": "採石場",
+"en": "Stone Pit",
+"kind": "building",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [
+"资源"
+],
+"cost": 1,
+"power": 600,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［パルを１枚アサイン］【素材】を３個得て、１枚引く。（あなたのスタンドしているパルをレストすることでアサインできる）",
+"flavor": "石が取れる。岩より小さく、砂より大きい。"
+},
+{
+"id": "TD01-009",
+"variants": [
+"TD01-009"
+],
+"imgs": [
+"TD01/TD01-009.png"
+],
+"ja": "武器製作台",
+"en": "Weapon Workbench",
+"kind": "building",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [
+"制造"
+],
+"cost": 3,
+"power": 1100,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［【素材】を１個消費、パルを１枚アサイン］パルを１枚まで選び、800【ダメージ】。あなたのパルをすべて選び、ターン終了時まで、【打撃力】＋１。（あなたのスタンドしているパルをレストすることでアサインできる）",
+"flavor": "武器や弾丸はいかが？ 肉切り包丁も作れるよ？"
+},
+{
+"id": "TD01-010",
+"variants": [
+"TD01-010"
+],
+"imgs": [
+"TD01/TD01-010.png"
+],
+"ja": "シングルショットライフル",
+"en": "Single-Shot Rifle",
+"kind": "gear",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [],
+"cost": 4,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【自】【登場時】パルを１枚まで選び、1500【ダメージ】。\n【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200。",
+"flavor": "単発式のライフル。装填数は少ないが、一撃は強力。"
+},
+{
+"id": "TD01-011",
+"variants": [
+"TD01-011",
+"TD01-011TSR"
+],
+"imgs": [
+"TD01/TD01-011.png",
+"TD01/TD01-011TSR.png"
+],
+"ja": "ファイアーブレス",
+"en": "Ignis Breath",
+"kind": "event",
+"lucky": false,
+"color": "red",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": null,
+"strike": null,
+"quick": true,
+"main": null,
+"text_ja": "パルを１枚選び、500【ダメージ】。",
+"flavor": "炎の竜の吐息のように、その炎技は敵を焼却する。"
+},
+{
+"id": "TD01-012",
+"variants": [
+"TD01-012",
+"TD01-012TSP",
+"TD01-012TSR"
+],
+"imgs": [
+"TD01/TD01-012.png",
+"TD01/TD01-012TSP.png",
+"TD01/TD01-012TSR.png"
+],
+"ja": "優しい波紋 – シルティア",
+"en": "Elphidran Aqua – Gentle Ripples",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"水",
+"龙"
+],
+"apts": [
+"农耕",
+"资源"
+],
+"cost": 6,
+"power": 900,
+"strike": 2,
+"quick": false,
+"main": "水灵龙",
+"text_ja": "【自】【登場時】２枚引き、あなたの手札を１枚選び、山札の上に置く。",
+"flavor": "水竜が現れた時、優しい波紋が広がる。"
+},
+{
+"id": "TD01-013",
+"variants": [
+"TD01-013"
+],
+"imgs": [
+"TD01/TD01-013.png"
+],
+"ja": "堅物で純真 – コチグリ",
+"en": "Jolthog Cryst – Stoic Yet Innocent",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"冰"
+],
+"apts": [
+"冷却"
+],
+"cost": 2,
+"power": 300,
+"strike": 1,
+"quick": false,
+"main": "冰刺鼠",
+"text_ja": "",
+"flavor": "衝撃を受けると、溜め込んだ冷気を放出する。"
+},
+{
+"id": "TD01-014",
+"variants": [
+"TD01-014",
+"TD01-014TSR"
+],
+"imgs": [
+"TD01/TD01-014.png",
+"TD01/TD01-014TSR.png"
+],
+"ja": "よく飛ぶ砲弾 – ペンタマ",
+"en": "Pengullet – Frequent Flyer",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"水",
+"冰"
+],
+"apts": [
+"农耕",
+"制造",
+"冷却",
+"搬运"
+],
+"cost": 3,
+"power": 500,
+"strike": 1,
+"quick": false,
+"main": "企丸丸",
+"text_ja": "",
+"flavor": "心の羽根は、まだ退化していないから。"
+},
+{
+"id": "TD01-015",
+"variants": [
+"TD01-015"
+],
+"imgs": [
+"TD01/TD01-015.png"
+],
+"ja": "凍夜にさまよう – オバケナワ",
+"en": "Hangyu Cryst – Frigid Wanderer",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"冰"
+],
+"apts": [
+"农耕",
+"制造",
+"冷却",
+"搬运"
+],
+"cost": 4,
+"power": 600,
+"strike": 2,
+"quick": false,
+"main": "冰缚灵",
+"text_ja": "【自】【登場時】◇３以下のパルを１枚まで選び、レストする。",
+"flavor": "咎人よ、凍てつき震えよ。"
+},
+{
+"id": "TD01-016",
+"variants": [
+"TD01-016"
+],
+"imgs": [
+"TD01/TD01-016.png"
+],
+"ja": "冷たい眼差し – ツララジカ",
+"en": "Reindrix – Icy Gaze",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"冰"
+],
+"apts": [
+"资源",
+"冷却"
+],
+"cost": 5,
+"power": 600,
+"strike": 2,
+"quick": true,
+"main": "严冬鹿",
+"text_ja": "【起】妨害（【手札】【クイック】［①、このカードを捨てる］または［このカードと他の手札を１枚捨てる］相手のアタックを失敗させる。バトルダメージは発生しない）",
+"flavor": "凍り付く眼差しに耐え、何かをするのはとても難しい。"
+},
+{
+"id": "TD01-017",
+"variants": [
+"TD01-017",
+"TD01-017TSR"
+],
+"imgs": [
+"TD01/TD01-017.png",
+"TD01/TD01-017TSR.png"
+],
+"ja": "流水の理 – シヴァ",
+"en": "Suzaku Aqua – Way of the Current",
+"kind": "pal",
+"lucky": true,
+"color": "blue",
+"types": [
+"水"
+],
+"apts": [
+"农耕"
+],
+"cost": 7,
+"power": 1200,
+"strike": 3,
+"quick": false,
+"main": "清雀",
+"text_ja": "【自】警戒（あなたのターン終了時、このカードをスタンドする）",
+"flavor": "流れるように淀みなく。武の極みは流水に至る。"
+},
+{
+"id": "TD01-018",
+"variants": [
+"TD01-018",
+"TD01-018TSR"
+],
+"imgs": [
+"TD01/TD01-018.png",
+"TD01/TD01-018TSR.png"
+],
+"ja": "氷原に轟く者 – ブリザモス",
+"en": "Mammorest Cryst – Roar of the Tundra",
+"kind": "pal",
+"lucky": true,
+"color": "blue",
+"types": [
+"冰",
+"地"
+],
+"apts": [
+"资源",
+"冷却"
+],
+"cost": 8,
+"power": 1700,
+"strike": 3,
+"quick": false,
+"main": "雪猛犸",
+"text_ja": "【永】あなたの建築物１枚につき、このカードの【戦闘力】＋200。\n【起】［手札の建築物を１枚捨てる］ターン終了時まで、このカードの【打撃力】＋１。",
+"flavor": "氷原のように峻厳で、氷原のように教訓をもたらす。"
+},
+{
+"id": "TD01-019",
+"variants": [
+"TD01-019"
+],
+"imgs": [
+"TD01/TD01-019.png"
+],
+"ja": "アンティークな木の椅子",
+"en": "Antique Wooden Chair",
+"kind": "building",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": 1200,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【自】【登場時】パルを１枚まで選び、ターン終了時まで、【戦闘力】＋1000。",
+"flavor": "由緒ある木の椅子。腰かけて、ほっと一息。"
+},
+{
+"id": "TD01-020",
+"variants": [
+"TD01-020"
+],
+"imgs": [
+"TD01/TD01-020.png"
+],
+"ja": "原始的な作業台",
+"en": "Primitive Workbench",
+"kind": "building",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [
+"制造"
+],
+"cost": 3,
+"power": 1100,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［パルを１枚アサイン］あなたの山札を上から１枚公開し、それが◇６以下の、建築物かギアなら、登場させてよい。登場させないなら、手札に加える。（あなたのスタンドしているパルをレストすることでアサインできる）",
+"flavor": "原始的だけど、序盤に役立つモノが作れる。"
+},
+{
+"id": "TD01-021",
+"variants": [
+"TD01-021"
+],
+"imgs": [
+"TD01/TD01-021.png"
+],
+"ja": "単発型スフィアランチャー",
+"en": "Single-Shot Sphere Launcher",
+"kind": "gear",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 3,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【自】【登場時】１枚引く。\n【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200。",
+"flavor": "スフィアを発射する装置。遠くにいるパルにも届く。"
+},
+{
+"id": "TD01-022",
+"variants": [
+"TD01-022",
+"TD01-022TSR"
+],
+"imgs": [
+"TD01/TD01-022.png",
+"TD01/TD01-022TSR.png"
+],
+"ja": "コールドブレス",
+"en": "Crystal Breath",
+"kind": "event",
+"lucky": false,
+"color": "blue",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": null,
+"strike": null,
+"quick": true,
+"main": null,
+"text_ja": "パルを１枚選び、ターン終了時まで、【打撃力】－３。それは次の相手のスタンドフェイズ中、スタンドしない。",
+"flavor": "氷の竜の吐息のように、その氷技は敵を凍結する。"
+},
+{
+"id": "TD01-023",
+"variants": [
+"TD01-023",
+"TD01-023TSR",
+"PR-017"
+],
+"imgs": [
+"TD01/TD01-023.png",
+"TD01/TD01-023TSR.png",
+"PR/PR-017.png"
+],
+"ja": "始まりのパル – モコロン",
+"en": "Lamball – My First Pal",
+"kind": "pal",
+"lucky": false,
+"color": null,
+"types": [
+"无"
+],
+"apts": [
+"制造",
+"搬运",
+"牧场"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "棉悠悠",
+"text_ja": "【永】このカードは◇４以上のパルにアタックされない。",
+"flavor": "始まりから君のそばに。モコモコした毛皮が盾になる。"
+},
+{
+"id": "TD01-024",
+"variants": [
+"TD01-024",
+"TD01-024TSR"
+],
+"imgs": [
+"TD01/TD01-024.png",
+"TD01/TD01-024TSR.png"
+],
+"ja": "小さな姫君 – ヒメウサ",
+"en": "Ribbuny – Little Princess",
+"kind": "pal",
+"lucky": false,
+"color": null,
+"types": [
+"无"
+],
+"apts": [
+"农耕",
+"制造",
+"搬运"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "姬小兔",
+"text_ja": "【自】このカードが墓地に置かれた時、【素材】を１個得る。",
+"flavor": "常にニコニコ笑顔をかかさない。 ツッパニャンにいたずらされないかぎり。"
+},
+{
+"id": "TD02-001",
+"variants": [
+"TD02-001",
+"TD02-001TSP",
+"TD02-001TSR"
+],
+"imgs": [
+"TD02/TD02-001.png",
+"TD02/TD02-001TSP.png",
+"TD02/TD02-001TSR.png"
+],
+"ja": "親衛隊長 – ササゾー",
+"en": "Mossanda – Guard Captain",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕",
+"制造",
+"资源",
+"搬运"
+],
+"cost": 5,
+"power": 900,
+"strike": 2,
+"quick": false,
+"main": "叶胖达",
+"text_ja": "",
+"flavor": "草食でよかった。3000枚の紙を引きちぎるグレパンダ。"
+},
+{
+"id": "TD02-002",
+"variants": [
+"TD02-002"
+],
+"imgs": [
+"TD02/TD02-002.png"
+],
+"ja": "夢見る双葉 – ナエモチ",
+"en": "Gumoss – Dreamy Seedling",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草",
+"地"
+],
+"apts": [
+"农耕"
+],
+"cost": 2,
+"power": 300,
+"strike": 1,
+"quick": false,
+"main": "叶泥泥",
+"text_ja": "",
+"flavor": "小さな双葉が育った時、どんな姿になるのだろう？"
+},
+{
+"id": "TD02-003",
+"variants": [
+"TD02-003",
+"TD02-003TSR"
+],
+"imgs": [
+"TD02/TD02-003.png",
+"TD02/TD02-003TSR.png"
+],
+"ja": "おやつの時間 – ポプリーナ",
+"en": "Flopie – Snack Lover",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕",
+"制造",
+"搬运"
+],
+"cost": 3,
+"power": 400,
+"strike": 1,
+"quick": false,
+"main": "波娜兔",
+"text_ja": "【自】【登場時】【食材】を２個得る。",
+"flavor": "いつもお手伝いありがとう。"
+},
+{
+"id": "TD02-004",
+"variants": [
+"TD02-004"
+],
+"imgs": [
+"TD02/TD02-004.png"
+],
+"ja": "華やかな香気 – アロアリュー",
+"en": "Dinossom – Radiant Fragrance",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"草",
+"龙"
+],
+"apts": [
+"农耕",
+"资源"
+],
+"cost": 4,
+"power": 400,
+"strike": 2,
+"quick": true,
+"main": "花冠龙",
+"text_ja": "【起】妨害（【手札】【クイック】［①、このカードを捨てる］または［このカードと他の手札を１枚捨てる］相手のアタックを失敗させる。バトルダメージは発生しない）",
+"flavor": "あなたが成功したいならば、アロアリューの尻尾を踏むべきではない。"
+},
+{
+"id": "TD02-005",
+"variants": [
+"TD02-005"
+],
+"imgs": [
+"TD02/TD02-005.png"
+],
+"ja": "自然の守護者 – ヤマガミ",
+"en": "Eikthyrdeer Terra – Guardian of Nature",
+"kind": "pal",
+"lucky": false,
+"color": "green",
+"types": [
+"地"
+],
+"apts": [
+"资源"
+],
+"cost": 6,
+"power": 800,
+"strike": 2,
+"quick": false,
+"main": "祇岳鹿",
+"text_ja": "【永】挑発（相手は挑発を持つカードを優先してアタック先に選ぶ）\n【起】［【食材】を２個消費］ターン終了時まで、このカードの【戦闘力】＋500。",
+"flavor": "ヤマガミの角は、金色の森の守護者の証である。"
+},
+{
+"id": "TD02-006",
+"variants": [
+"TD02-006",
+"TD02-006TSR"
+],
+"imgs": [
+"TD02/TD02-006.png",
+"TD02/TD02-006TSR.png"
+],
+"ja": "溢れる愛情 – ラブラドン",
+"en": "Broncherry – Brimming Adoration",
+"kind": "pal",
+"lucky": true,
+"color": "green",
+"types": [
+"草"
+],
+"apts": [
+"农耕"
+],
+"cost": 7,
+"power": 1500,
+"strike": 3,
+"quick": false,
+"main": "连理龙",
+"text_ja": "【永】挑発（相手は挑発を持つカードを優先してアタック先に選ぶ）",
+"flavor": "パートナーを見つけた後の体臭は、「初恋の香り」と呼ばれている。"
+},
+{
+"id": "TD02-007",
+"variants": [
+"TD02-007",
+"TD02-007TSR"
+],
+"imgs": [
+"TD02/TD02-007.png",
+"TD02/TD02-007TSR.png"
+],
+"ja": "大地に轟く者 – グランモス",
+"en": "Mammorest – Roar of the Wilds",
+"kind": "pal",
+"lucky": true,
+"color": "green",
+"types": [
+"草",
+"地"
+],
+"apts": [
+"农耕",
+"资源"
+],
+"cost": 8,
+"power": 2000,
+"strike": 4,
+"quick": false,
+"main": "森猛犸",
+"text_ja": "【自】このカードが墓地に置かれた時、【食材】を３個得る。",
+"flavor": "大地のように雄大で、大地のように恩恵をもたらす。"
+},
+{
+"id": "TD02-008",
+"variants": [
+"TD02-008",
+"TD02-008TSR"
+],
+"imgs": [
+"TD02/TD02-008.png",
+"TD02/TD02-008TSR.png"
+],
+"ja": "ベリー農園",
+"en": "Berry Plantation",
+"kind": "building",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [
+"农耕"
+],
+"cost": 1,
+"power": 600,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［パルを１枚アサイン］【食材】を３個得て、１枚引く。（あなたのスタンドしているパルをレストすることでアサインできる）",
+"flavor": "種をまいて、水をやって、採取するのは赤いベリー。"
+},
+{
+"id": "TD02-009",
+"variants": [
+"TD02-009"
+],
+"imgs": [
+"TD02/TD02-009.png"
+],
+"ja": "キャンプファイア",
+"en": "Campfire",
+"kind": "building",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [
+"生火"
+],
+"cost": 3,
+"power": 1100,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［【食材】を２個消費、パルを１枚アサイン］あなたはライフを１得て、あなたのパルをすべて選び、ターン終了時まで、【戦闘力】＋1000。（あなたのスタンドしているパルをレストすることでアサインできる）",
+"flavor": "明るくて暖かい。そして簡単な料理も作れる。"
+},
+{
+"id": "TD02-010",
+"variants": [
+"TD02-010"
+],
+"imgs": [
+"TD02/TD02-010.png"
+],
+"ja": "精錬金属の槍",
+"en": "Refined Metal Spear",
+"kind": "gear",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [],
+"cost": 6,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋900。",
+"flavor": "上質な金属で作られた槍。近接戦闘に有用。"
+},
+{
+"id": "TD02-011",
+"variants": [
+"TD02-011"
+],
+"imgs": [
+"TD02/TD02-011.png"
+],
+"ja": "ストーンブラスト",
+"en": "Stone Blast",
+"kind": "event",
+"lucky": false,
+"color": "green",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": null,
+"strike": null,
+"quick": true,
+"main": null,
+"text_ja": "パルを１枚選び、ターン終了時まで、【戦闘力】＋500。",
+"flavor": "その地技は、つぶての雨を援軍に変える。"
+},
+{
+"id": "TD02-012",
+"variants": [
+"TD02-012",
+"TD02-012TSP",
+"TD02-012TSR"
+],
+"imgs": [
+"TD02/TD02-012.png",
+"TD02/TD02-012TSP.png",
+"TD02/TD02-012TSR.png"
+],
+"ja": "死を呼ぶ鎧竜 – ジオラーヴァ",
+"en": "Astegon – Aegis Wyvern of Death",
+"kind": "pal",
+"lucky": true,
+"color": "purple",
+"types": [
+"暗",
+"龙"
+],
+"apts": [
+"制造",
+"资源"
+],
+"cost": 8,
+"power": 1200,
+"strike": 3,
+"quick": false,
+"main": "魔渊龙",
+"text_ja": "【自】【登場時】パルを１枚まで選び、ターン終了時まで、【戦闘力】－1000（【戦闘力】は０以下になっても墓地に置かれない）。\r\n【自】【アタック時】【戦闘力】300以下のパルをすべて選び、墓地に置く（あなたのパルも選ぶ）。",
+"flavor": "汝、かの獣の前に立つべからず。汝、かの獣の声を聴くべからず。"
+},
+{
+"id": "TD02-013",
+"variants": [
+"TD02-013"
+],
+"imgs": [
+"TD02/TD02-013.png"
+],
+"ja": "叡智の結晶 – ホウロック",
+"en": "Hoocrates – Embodiment of Wisdom",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"农耕"
+],
+"cost": 2,
+"power": 300,
+"strike": 1,
+"quick": false,
+"main": "啼卡尔",
+"text_ja": "",
+"flavor": "我思う、ゆえに我あり。"
+},
+{
+"id": "TD02-014",
+"variants": [
+"TD02-014",
+"TD02-014TSR",
+"PR-016"
+],
+"imgs": [
+"TD02/TD02-014.png",
+"TD02/TD02-014TSR.png",
+"PR/PR-016.png"
+],
+"ja": "お宝の予感 – ダリザード",
+"en": "Leezpunk – Treasure Bandit",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"农耕",
+"制造",
+"搬运"
+],
+"cost": 3,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "朋克蜥",
+"text_ja": "【自】このカードが墓地に置かれた時、相手は自分の手札を１枚選び、捨てる。",
+"flavor": "第六感に優れ、カッコいいポーズにこだわる。"
+},
+{
+"id": "TD02-015",
+"variants": [
+"TD02-015"
+],
+"imgs": [
+"TD02/TD02-015.png"
+],
+"ja": "暗躍する影 – マスクロウ",
+"en": "Cawgnito – Looming Shadow",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"资源",
+"牧场"
+],
+"cost": 4,
+"power": 300,
+"strike": 2,
+"quick": false,
+"main": "黑鸦隐士",
+"text_ja": "【永】隠密（このカードはブロックされない）",
+"flavor": "音もなく闇に隠れ、密やかに暗躍する。"
+},
+{
+"id": "TD02-016",
+"variants": [
+"TD02-016",
+"TD02-016TSR"
+],
+"imgs": [
+"TD02/TD02-016.png",
+"TD02/TD02-016TSR.png"
+],
+"ja": "待ち伏せる狩人 – ヘルゴート",
+"en": "Incineram – Lurking Stalker",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗",
+"火"
+],
+"apts": [
+"生火",
+"制造",
+"资源",
+"搬运"
+],
+"cost": 5,
+"power": 900,
+"strike": 2,
+"quick": false,
+"main": "炎魔羊",
+"text_ja": "",
+"flavor": "捕らえた獲物を縄張りに持ち帰る炎爪の狩人。"
+},
+{
+"id": "TD02-017",
+"variants": [
+"TD02-017"
+],
+"imgs": [
+"TD02/TD02-017.png"
+],
+"ja": "立ちはだかる黒炎 – シンエンオ",
+"en": "Blazehowl Noct – Darkflame Defender",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗",
+"火"
+],
+"apts": [
+"生火",
+"资源"
+],
+"cost": 6,
+"power": 900,
+"strike": 2,
+"quick": true,
+"main": "狱阎王",
+"text_ja": "【起】妨害（【手札】【クイック】［①、このカードを捨てる］または［このカードと他の手札を１枚捨てる］相手のアタックを失敗させる。バトルダメージは発生しない）",
+"flavor": "暗黒のツメを恐れよ。立ちはだかるは黒炎の獅子。"
+},
+{
+"id": "TD02-018",
+"variants": [
+"TD02-018",
+"TD02-018TSR"
+],
+"imgs": [
+"TD02/TD02-018.png",
+"TD02/TD02-018TSR.png"
+],
+"ja": "命を盗む者 – ヤミトバリ",
+"en": "Felbat – Lifestealer",
+"kind": "pal",
+"lucky": true,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"制造"
+],
+"cost": 7,
+"power": 1000,
+"strike": 3,
+"quick": false,
+"main": "夜幕魔蝠",
+"text_ja": "【永】隠密（このカードはブロックされない）\n【自】【アタック時】ライフを１得る。",
+"flavor": "闇の帳に包まれて、命を盗む者がいる。"
+},
+{
+"id": "TD02-019",
+"variants": [
+"TD02-019"
+],
+"imgs": [
+"TD02/TD02-019.png"
+],
+"ja": "宙吊り罠",
+"en": "Hanging Trap",
+"kind": "building",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 2,
+"power": 900,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】【ターン１回】［パルを１枚アサイン］このカードが追放しているパルが追放領域にないなら、パルを１枚選び、追放する。（あなたのスタンドしているパルをレストすることでアサインできる）\n【自】このカードが拠点から離れた時、このカードが追放したパルをオーナーの拠点にレスト状態で登場させる。",
+"flavor": "小さなパルや人間を宙吊りにして捕まえる罠。"
+},
+{
+"id": "TD02-020",
+"variants": [
+"TD02-020"
+],
+"imgs": [
+"TD02/TD02-020.png"
+],
+"ja": "マスクロウ帽",
+"en": "Cawgnito Hat",
+"kind": "gear",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 4,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "【起】［このカードをレスト］パルを１枚選び、ターン終了時まで、【戦闘力】＋200し、〈〉内の能力を与える。〈【永】隠密（このカードはブロックされない）〉。",
+"flavor": "マスクロウっぽくなれる帽子。これで君も暗躍する影。"
+},
+{
+"id": "TD02-021",
+"variants": [
+"TD02-021",
+"TD02-021TSR"
+],
+"imgs": [
+"TD02/TD02-021.png",
+"TD02/TD02-021TSR.png"
+],
+"ja": "暗闇からの一撃",
+"en": "Strike from the Darkness",
+"kind": "event",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 4,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "パルを１枚選び、墓地に置く。",
+"flavor": "闇に紛れた奇襲ほど恐ろしいものはない。"
+},
+{
+"id": "TD02-022",
+"variants": [
+"TD02-022"
+],
+"imgs": [
+"TD02/TD02-022.png"
+],
+"ja": "医薬品",
+"en": "Medical Supplies",
+"kind": "event",
+"lucky": false,
+"color": "purple",
+"types": [],
+"apts": [],
+"cost": 7,
+"power": null,
+"strike": null,
+"quick": false,
+"main": null,
+"text_ja": "あなたの墓地の◇８以下のパルを１枚選び、レスト状態で登場させる。",
+"flavor": "胃潰瘍や骨折に効く不思議な医薬品。"
+},
+{
+"id": "TD02-023",
+"variants": [
+"TD02-023",
+"TD02-023TSR",
+"PR-019",
+"PR-029"
+],
+"imgs": [
+"TD02/TD02-023.png",
+"TD02/TD02-023TSR.png",
+"PR/PR-019.png",
+"PR/PR-029.png"
+],
+"ja": "始まりのパル – ツッパニャン",
+"en": "Cattiva – My First Pal",
+"kind": "pal",
+"lucky": false,
+"color": null,
+"types": [
+"无"
+],
+"apts": [
+"农耕",
+"制造",
+"资源",
+"搬运"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "捣蛋猫",
+"text_ja": "【永】このカードは◇３以下のパルにアタックされない。",
+"flavor": "始まりから君のそばに。大きいやつが怖いのは内緒。"
+},
+{
+"id": "TD02-024",
+"variants": [
+"TD02-024",
+"TD02-024TSR",
+"PR-018"
+],
+"imgs": [
+"TD02/TD02-024.png",
+"TD02/TD02-024TSR.png",
+"PR/PR-018.png"
+],
+"ja": "始まりのパル – タマコッコ",
+"en": "Chikipi – My First Pal",
+"kind": "pal",
+"lucky": false,
+"color": null,
+"types": [
+"无"
+],
+"apts": [
+"农耕",
+"牧场"
+],
+"cost": 2,
+"power": 200,
+"strike": 1,
+"quick": false,
+"main": "皮皮鸡",
+"text_ja": "【自】このカードが墓地に置かれた時、【食材】を１個得る。",
+"flavor": "始まりから君のそばに。気がついたら卵がひとつ。"
+},
+{
+"id": "SS01-001",
+"variants": [
+"SS01-001",
+"SS01-001OSR"
+],
+"imgs": [
+"SS01/SS-001.png",
+"SS01/SS-001OSR.png"
+],
+"ja": "降り注ぐ電撃 – エレパンダ",
+"en": "Grizzbolt – Cascading Voltage",
+"kind": "pal",
+"lucky": false,
+"color": "red",
+"types": [
+"雷"
+],
+"apts": [
+"发电",
+"制造",
+"资源",
+"搬运"
+],
+"cost": 6,
+"power": 1000,
+"strike": 2,
+"quick": false,
+"main": "暴电熊",
+"text_ja": "【自】【登場時】相手のパルをすべて選び、300【ダメージ】。",
+"flavor": "乱れ落ちる電撃は周囲一帯を痺れさせる。"
+},
+{
+"id": "SS01-002",
+"variants": [
+"SS01-002",
+"SS01-002OSR"
+],
+"imgs": [
+"SS01/SS-002.png",
+"SS01/SS-002OSR.png"
+],
+"ja": "仕上げの氷刃 – オコチョ",
+"en": "Chillet – Final Frostneedle",
+"kind": "pal",
+"lucky": false,
+"color": "blue",
+"types": [
+"冰",
+"龙"
+],
+"apts": [
+"农耕",
+"冷却"
+],
+"cost": 6,
+"power": 1000,
+"strike": 2,
+"quick": false,
+"main": "疾旋鼬",
+"text_ja": "【自】このカードのバトル相手のパルが墓地に置かれた時、１枚引く。",
+"flavor": "オコチョの本気はほんのりひんやり刺激的。"
+},
+{
+"id": "SS01-003",
+"variants": [
+"SS01-003",
+"SS01-003OSR"
+],
+"imgs": [
+"SS01/SS-003.png",
+"SS01/SS-003OSR.png"
+],
+"ja": "深夜の本気 – ンダコアラ",
+"en": "Depresso – Midnight Overdrive",
+"kind": "pal",
+"lucky": false,
+"color": "purple",
+"types": [
+"暗"
+],
+"apts": [
+"制造",
+"资源",
+"搬运",
+"牧场"
+],
+"cost": 3,
+"power": 300,
+"strike": 1,
+"quick": false,
+"main": "瞅什魔",
+"text_ja": "【永】夜行性（夜なら、このカードの【戦闘力】＋300）\n【自】【登場時】夜なら、建築物を１枚まで選び、ターン終了時まで、【耐久力】－500（【耐久力】は０以下になっても墓地に置かれない）。",
+"flavor": "立派な柱も、一晩のうちに。"
+},
+{
+"id": "SS01-004",
+"variants": [
+"SS01-004",
+"SS01-004OSR"
+],
+"imgs": [
+"SS01/SS-004.png",
+"SS01/SS-004OSR.png"
+],
+"ja": "自信満々 – ツッパニャン",
+"en": "Cattiva – Brimming Bravado",
+"kind": "pal",
+"lucky": false,
+"color": null,
+"types": [
+"无"
+],
+"apts": [
+"农耕",
+"制造",
+"资源",
+"搬运"
+],
+"cost": 3,
+"power": 300,
+"strike": 1,
+"quick": false,
+"main": "捣蛋猫",
+"text_ja": "【永】あなたのソウルが５枚以上なら、このカードの【戦闘力】＋200。\n【永】あなたのソウルが10枚以上なら、このカードの【戦闘力】＋200。",
+"flavor": "自信がみなぎるほどに、肉球は熱く燃える。"
+},
+{
+"id": "SS01-005",
+"variants": [
+"SS01-005",
+"SS01-005OSR"
+],
+"imgs": [
+"SS01/SS-005.png",
+"SS01/SS-005OSR.png"
+],
+"ja": "翼竜の息吹  – フェスキー",
+"en": "Quivern – Breath of the Wyvern",
+"kind": "pal",
+"lucky": true,
+"color": null,
+"types": [
+"龙"
+],
+"apts": [
+"农耕",
+"制造",
+"资源",
+"搬运"
+],
+"cost": 6,
+"power": 1300,
+"strike": 2,
+"quick": false,
+"main": "天羽龙",
+"text_ja": "【自】このカードがパルか建築物にアタックした時、パルか建築物を１枚まで選び、700【ダメージ】。",
+"flavor": "愛くるしい姿からは想像もつかない超威力。"
+}
+]

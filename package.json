@@ -1,0 +1,19 @@
+{
+  "name": "palworld-tcg",
+  "version": "8.0.0",
+  "description": "幻兽帕鲁卡牌游戏 粉丝对战平台（非官方、非盈利，零依赖）",
+  "scripts": {
+    "start": "node server/server.js",
+    "build:demo": "node tools/build-demo.js",
+    "test": "node test/rules.js && node test/fuzz.js 1 100"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/palworld-tcg/palworld-tcg.git"
+  },
+  "homepage": "https://palworld-tcg.github.io/",
+  "engines": {
+    "node": ">=18"
+  }
+}

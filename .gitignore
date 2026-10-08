@@ -1,0 +1,8 @@
+node_modules/
+dist/
+userdata/
+palworld-data/
+games/
+server/train/data/
+*.log
+.DS_Store
