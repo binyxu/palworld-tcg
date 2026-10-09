@@ -151,6 +151,7 @@ class AI {
       return s > 0 ? 10 + s : -1;
     }
     if (a.t === 'act') {
+      if (c && /选择1只帕鲁[^。]*直至回合结束[^。]*(战斗力|打击力)】?\+/.test(c.def.text || '')) { if (!g.myPals(pi).length) return -9; if (hasAttack) return 40; }
       if (/任命/.test(a.label) && hasAttack) {
         if (this.level !== 'hard') return -1;
         // 困难：存在无法有效攻击的竖置帕鲁时，用其任命

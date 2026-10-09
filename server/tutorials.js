@@ -13,28 +13,28 @@ const RL = n => Array(n).fill('BP01-099');   // 填充用卡组（高傲之牙 �
 const TUTORIALS = [
   {
     id: 't1', title: '第 1 课 · 出牌与攻击', desc: '回合流程、灵魂、使用帕鲁、攻击对手玩家。',
-    opp: {},
+    opp: { play: ['BP01-099'], attacks: ['BP01-099'] },
     sc: {
-      turnNo: 2, first: 1, active: 0,
+      turnNo: 2, first: 1, active: 0, limit: { pi: 0, turn: 4 },
       players: [
-        { name: '你', life: 10, souls: 3, hand: ['TD01-003'], deck: ['TD01-002', ...RL(10)] },
-        { name: '教练', life: 3, souls: 2, hand: [], deck: RL(12) },
+        { name: '你', life: 10, souls: 3, hand: ['TD01-003'], deck: ['BP01-099', 'TD01-002', ...RL(10)] },
+        { name: '教练', life: 3, souls: 1, hand: ['BP01-099'], deck: RL(12) },
       ],
     },
     steps: [
-      { text: '欢迎来到<b>幻兽帕鲁卡牌游戏</b>！每人有 <b>10 点生命</b>，把对手的生命打到 <b>0</b> 就获胜（卡组被抽空也会输）。<br>这一课的对手只剩 <b>3</b> 点生命。', hl: ['op'], next: true },
+      { text: '欢迎来到<b>幻兽帕鲁卡牌游戏</b>！每人有 <b>10 点生命</b>，把对手的生命打到 <b>0</b> 就获胜（卡组被抽空也会输）。<br>这一课的对手只剩 <b>3</b> 点生命，你要在<b>第 4 回合结束前</b>打倒它 —— 每一点伤害都不能浪费。', hl: ['op'], next: true },
       { text: '左下角是你的<b>灵魂</b>，它就是出牌的「费用」，现在你有 <b>3</b> 个。<br>每个回合开始会自动：① 竖置你所有的卡 ② <b>抽 1 张卡</b> ③ <b>灵魂 +2</b>。', hl: ['souls'], next: true },
       { text: '手里的「火灵儿」费用 ◇3。把它从手牌<b>拖到我的据点</b>（或点击它）来使用。', drag: ['TD01-003', 'mpal'], log: '使用了.*火灵儿' },
       { text: '帕鲁<b>登场当回合就能攻击</b>。卡上 ⚔ 是战斗力，✱ 是打击力（打到玩家时造成的伤害）。<br>把火灵儿<b>拖到对手头像</b>上发起攻击！', drag: ['TD01-003', 'op'], log: '教练 失去 1 点生命' },
-      { text: '命中！对手生命 3 → 2。攻击过的帕鲁会<b>横置</b>（横过来），本回合不能再攻击。<br>灵魂也用完了，点击<b>结束回合</b>。', tap: 'end', log: '第 4 回合' },
-      { text: '新的回合：你抽到了「电棘鼠」，灵魂又增加了 2 个，横置的卡也都竖了回来。<br>使用电棘鼠，然后用<b>两只帕鲁各攻击一次</b>，打完最后 2 点生命！', drag: ['TD01-002', 'mpal'], hl: ['TD01-003', 'op'], win: true },
+      { text: '命中！对手生命 3 → 2。攻击过的帕鲁会<b>横置</b>（横过来），本回合不能再攻击。<br>灵魂也用完了，点击<b>结束回合</b>。接下来是对手的回合，看看它会做什么。', tap: 'end', log: '第 4 回合' },
+      { text: '对手出了猎狼打了你一下，攻击后猎狼横置了，<b>没法阻挡</b>。<br>你抽到了「电棘鼠」：使用它，再让<b>两只帕鲁各攻击一次</b>，打完最后 2 点生命！', drag: ['TD01-002', 'mpal'], hl: ['TD01-003', 'op'], win: true },
     ],
   },
   {
     id: 't2', title: '第 2 课 · 战斗与阻挡', desc: '攻击目标、阻挡、战斗力比较。',
     opp: { block: true },
     sc: {
-      turnNo: 5, active: 0,
+      turnNo: 5, active: 0, limit: { pi: 0, turn: 5 },
       players: [
         { name: '你', life: 6, souls: 4, base: ['BP01-013', 'TD01-003'], hand: [], deck: RL(10) },
         { name: '教练', life: 2, souls: 4, base: [{ id: 'BP01-099', rested: true }, 'BP01-056'], hand: [], deck: RL(10) },
@@ -51,7 +51,7 @@ const TUTORIALS = [
     id: 't3', title: '第 3 课 · 伤害翻卡与幸运☆', desc: '伤害如何结算、☆卡抵消伤害。',
     opp: {},
     sc: {
-      turnNo: 5, active: 0,
+      turnNo: 5, active: 0, limit: { pi: 0, turn: 5 },
       players: [
         { name: '你', life: 5, souls: 2, base: ['BP01-013', 'TD01-002'], hand: [], deck: RL(10) },
         { name: '教练', life: 2, souls: 4, base: [], hand: [], deck: ['TD02-006', ...RL(10)] },
@@ -67,23 +67,23 @@ const TUTORIALS = [
     id: 't4', title: '第 4 课 · 建筑物与任命', desc: '建筑物能力、任命帕鲁、素材。',
     opp: { block: true },
     sc: {
-      turnNo: 5, active: 0,
+      turnNo: 5, active: 0, limit: { pi: 0, turn: 5 },
       players: [
         { name: '你', life: 5, souls: 2, material: 1, base: ['TD01-009', 'TD01-002', 'TD01-003'], hand: [], deck: RL(10) },
-        { name: '教练', life: 1, souls: 4, base: ['BP01-099'], hand: [], deck: RL(10) },
+        { name: '教练', life: 2, souls: 4, base: ['BP01-099'], hand: [], deck: RL(10) },
       ],
     },
     steps: [
-      { text: '<b>建筑物</b>放在据点下方一排，不会攻击，但有各种能力。「武器工作台」：消费 1 个<b>素材</b>、<b>任命</b> 1 只帕鲁，就能对一只帕鲁造成 <b>800 伤害</b>。<br>「任命」= 把自己一只竖置的帕鲁横置，派它去建筑物里干活。', hl: ['TD01-009'], next: true },
+      { text: '<b>建筑物</b>放在据点下方一排，不会攻击，但有各种能力。「武器工作台」：消费 1 个<b>素材</b>、<b>任命</b> 1 只帕鲁，就能对一只帕鲁造成 <b>800 伤害</b>。<br>「任命」= 把自己一只竖置的帕鲁横置，派它去建筑物里干活。<br>对手 2 点生命、有猎狼看门，你的帕鲁打击力都只有 1 —— 硬打是打不死的。', hl: ['TD01-009', 'op:BP01-099'], next: true },
       { text: '对手的「猎狼」竖置着，会阻挡你的攻击。点击发光的<b>武器工作台</b>起动能力：任命<b>电棘鼠</b>，把 800 伤害打在猎狼身上（500 战斗力，必死）。<br>也可以直接把电棘鼠<b>拖到工作台</b>上任命。', drag: ['TD01-002', 'TD01-009'], hl: ['op:BP01-099'], log: '高傲之牙 猎狼.*墓地|猎狼.*放置于墓地|破坏' },
-      { text: '阻挡者没了！电棘鼠被任命后横置，不能攻击了，但还有<b>火灵儿</b>（武器工作台还让你所有帕鲁本回合 ✱ 打击力 +1）。去攻击对手玩家，拿下胜利！', drag: ['TD01-003', 'op'], win: true },
+      { text: '阻挡者没了！电棘鼠被任命后横置，不能攻击了，但工作台让你所有帕鲁本回合 <b>✱ 打击力 +1</b>：<b>火灵儿</b>现在能打 2 点，去攻击对手玩家！', drag: ['TD01-003', 'op'], win: true },
     ],
   },
   {
     id: 'ev', title: '第 5 课 · 事件卡', desc: '事件卡：用完即进墓地的一次性效果。',
     opp: { block: true },
     sc: {
-      turnNo: 5, active: 0,
+      turnNo: 5, active: 0, limit: { pi: 0, turn: 5 },
       players: [
         { name: '你', life: 5, souls: 4, base: ['BP01-013'], hand: ['TD02-021'], deck: RL(10) },
         { name: '教练', life: 2, souls: 2, base: ['TD01-006'], hand: [], deck: RL(10) },
@@ -97,30 +97,29 @@ const TUTORIALS = [
     ],
   },
   {
-    id: 'gear', title: '第 6 课 · 装备、技能与灵魂抽卡', desc: '支付 3 灵魂抽卡、装备、帕鲁的【起】能力。',
-    opp: { block: true },
+    id: 'gear', title: '第 6 课 · 装备、技能与灵魂抽卡', desc: '支付 3 灵魂抽卡、装备、帕鲁的【起】能力、突破。',
+    opp: {},
     sc: {
-      turnNo: 5, active: 0,
+      turnNo: 5, active: 0, limit: { pi: 0, turn: 5 },
       players: [
-        { name: '你', life: 4, souls: 7, material: 2, base: ['TD01-006', 'TD01-003'], hand: [], deck: ['TD01-010', ...RL(10)] },
-        { name: '教练', life: 1, souls: 2, base: ['BP01-013', 'TD01-006'], hand: [], deck: RL(10) },
+        { name: '你', life: 4, souls: 6, ingredient: 1, base: ['BP01-059'], hand: [], deck: ['BP01-069', ...RL(10)] },
+        { name: '教练', life: 2, souls: 2, base: [{ id: 'TD01-018', damage: 300 }], hand: [], deck: RL(10) },
       ],
     },
     steps: [
-      { text: '手里没牌，但有 7 个灵魂。<b>支付 3 灵魂可以抽 1 张</b>（每回合 1 次）：把<b>卡组拖到手牌区</b>。', drag: ['deck', 'hand'], log: '支付 3 灵魂抽卡' },
-      { text: '抽到 🗡<b>装备</b>「单发步枪」：登场时给 1 只帕鲁 <b>1500 伤害</b>。拖到右侧建筑物/装备区。', drag: ['TD01-010', 'mbld'], log: '使用了.*单发步枪' },
-      { text: '目标：<b>点对手的火麒麟</b>（1200），确定。', tap: 'op:BP01-013', log: '火麒麟.*(墓地|被破坏)' },
-      { text: '装备还能<b>横置</b>来强化帕鲁：点「单发步枪」起动，给<b>你的雷胖达</b> ⚔+200。', tap: 'me:TD01-010', log: '单发步枪.*起动|战斗力.*\\+200|\\+200' },
-      { text: '帕鲁自己也有【起】能力：点<b>你的雷胖达</b>，消费 2 素材 ⚔+500。', tap: 'me:TD01-006', log: '雷胖达.*起动|\\+500' },
-      { text: '雷胖达现在 ⚔1800，对手的雷胖达只有 1100。<b>雷胖达 → 对手</b>，它敢挡就打爆它！', drag: ['me:TD01-006', 'op'], log: '进行阻挡' },
-      { text: '阻挡者被击败。最后让<b>火灵儿 → 对手</b>！', drag: ['TD01-003', 'op'], win: true },
+      { text: '对手的雪猛犸受过伤，还剩 <b>1400</b>，一定会阻挡。你的碎岩龟只有 <b>800</b>。<br>三样东西加起来才够：<b>灵魂抽卡 → 装备 → 帕鲁技能</b>。', hl: ['op:TD01-018', 'me:BP01-059'], next: true },
+      { text: '手里没牌，但有 6 个灵魂。<b>支付 3 灵魂抽 1 张</b>（每回合 1 次）：把<b>卡组拖到手牌区</b>。', drag: ['deck', 'hand'], log: '支付 3 灵魂抽卡' },
+      { text: '抽到 🗡<b>装备</b>「农业帽子」。拖到右侧建筑物/装备区使用。', drag: ['BP01-069', 'mbld'], log: '使用了.*农业帽子' },
+      { text: '装备可以<b>横置</b>起动：点农业帽子，选<b>你的碎岩龟</b> ⚔+200，还能获得 1 个<b>食材</b>（凑够 2 个）。', tap: 'me:BP01-069', log: '获得.*食材|食材' },
+      { text: '帕鲁自己的【起】能力：点<b>碎岩龟</b>，消费 2 食材 ⚔+500，并获得<b>突破</b>（打死阻挡者时也伤害玩家）。', tap: 'me:BP01-059', log: '碎岩龟.*起动' },
+      { text: '碎岩龟 ⚔1500 &gt; 1400！<b>碎岩龟 → 对手</b>，阻挡者被打倒时，突破照样打 2 点！', drag: ['me:BP01-059', 'op'], win: true },
     ],
   },
   {
     id: 't5', title: '第 7 课 · 妨碍与试探', desc: '对手回合外的应对：妨碍、快速。',
     opp: { hinder: true },
     sc: {
-      turnNo: 5, active: 0,
+      turnNo: 5, active: 0, limit: { pi: 0, turn: 5 },
       players: [
         { name: '你', life: 5, souls: 2, base: ['TD01-002', 'BP01-013'], hand: [], deck: RL(10) },
         { name: '教练', life: 2, souls: 2, base: [], hand: ['TD01-004'], deck: RL(10) },
@@ -136,7 +135,7 @@ const TUTORIALS = [
     id: 'def', title: '第 8 课 · 防守回合', desc: '对手回合：阻挡、快速事件、妨碍的两种付法。',
     opp: { attacks: ['TD01-003', 'BP01-013', 'TD01-006'] },
     sc: {
-      turnNo: 6, first: 0, active: 1,
+      turnNo: 6, first: 0, active: 1, limit: { pi: 0, turn: 7 },
       players: [
         { name: '你', life: 2, souls: 3, base: ['BP01-056', { id: 'TD01-002', rested: true }], hand: ['TD01-011', 'TD01-004', 'TD01-016', 'TD01-002'], deck: RL(10) },
         { name: '教练', life: 1, souls: 2, base: ['TD01-003', 'BP01-099', 'BP01-013', 'TD01-006'], hand: [], deck: RL(10) },
@@ -154,30 +153,19 @@ const TUTORIALS = [
 ];
 TUTORIALS.forEach((t, i) => { t.no = i + 1; t.sc.limit = t.sc.limit || null; });
 
-// 教程对手：按课程设定做最简单、可预测的应对
+// 教程对手：自己的回合按课程脚本行动（出牌、攻击），应对（阻挡 / 妨碍 / 快速）交给真正的 AI 判断
+const { AI } = require('./ai');
 class TutorAI {
-  constructor(opp = {}) { this.opp = opp; }
+  constructor(opp = {}) { this.opp = opp; this.ai = new AI('hard', 7); this.ai.noSim = false; }
   decide(g, pi) {
     const q = g.pending;
-    if (q.kind === 'main') {
-      if (q.quick && this.opp.hinder) { const i = q.actions.findIndex(a => a.t !== 'end'); if (i >= 0) return i; }
-      if (!q.quick && this.opp.attacks) {
-        for (const id of this.opp.attacks) { const i = q.actions.findIndex(a => a.t === 'attack' && g.findCard(a.uid).id === id); if (i >= 0) return i; }
-      }
+    if (q.kind === 'main' && !q.quick) {
+      for (const id of this.opp.play || []) { const i = q.actions.findIndex(a => a.t === 'play' && g.findCard(a.uid).id === id); if (i >= 0) return i; }
+      for (const id of this.opp.attacks || []) { const i = q.actions.findIndex(a => a.t === 'attack' && g.findCard(a.uid).id === id); if (i >= 0) return i; }
       const e = q.actions.findIndex(a => a.t === 'end'); return e >= 0 ? e : 0;
     }
-    if (q.kind === 'option') {
-      if (q.meta && q.meta.targets) { const i = q.meta.targets.indexOf('player'); if (i >= 0) return i; }
-      if (/阻挡/.test(q.prompt)) return this.opp.block ? 0 : q.options.length - 1;
-      return 0;
-    }
-    if (q.kind === 'select') {
-      if (/阻挡/.test(q.prompt)) return this.opp.block ? q.cands.slice(0, Math.max(1, q.min || 0)) : q.cands.slice(0, q.min || 0);
-      if (/丢弃|费用|支付/.test(q.prompt)) return q.cands.slice(0, Math.max(q.min || 0, 1)).slice(0, q.max ?? 1);
-      return q.cands.slice(0, q.min || 0);
-    }
-    if (q.kind === 'num') return q.min || 0;
-    return 0;
+    if (q.kind === 'option' && q.meta && q.meta.targets) { const i = q.meta.targets.indexOf('player'); if (i >= 0) return i; }
+    return this.ai.decide(g, pi);
   }
 }
 module.exports = { TUTORIALS, TutorAI };

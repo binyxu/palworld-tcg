@@ -7,6 +7,7 @@
 // - 转置表合并"同一局面不同顺序"；按节点预算在兄弟分支间均分，预算用尽的分支用贪心策略补完本回合；
 // - 找到的整条路径会缓存，后续决策若局面与计划一致则直接沿用，不一致（如抽到新牌）则重新搜索。
 const { AI } = require('./ai');
+const harmfulP = p => /伤害|墓地|横置|放逐|返回手牌|-\d|无法|解体|丢弃/.test(p) && !/墓地中|墓地的|墓地帕鲁/.test(p);
 const { evalM } = require('./ai_master');
 const { sig, Solver, moves: solverMoves, child: solverChild } = require('./solver');
 const VN = require('./ai_value');
@@ -109,6 +110,11 @@ class DeepAI extends AI {
         const key = a.t + '|' + (c ? (c.zone === 'hand' ? 'h:' + c.id : c.uid) : '') + '|' + (a.label || '').replace(/《[^》]*》/g, '');
         if (seen.has(key)) return; seen.add(key);
         let h = 0; try { h = a.t === 'end' ? 0.4 : this.heur(g, pi, a, q.actions); } catch (e) { }
+        // 强化类起动（直至回合结束 战斗力/打击力+）：有可攻击的帕鲁时先强化再攻击；己方没有帕鲁时不要起动（只能强化对手）
+        if (a.t === 'act' && c && /选择1只帕鲁[^。]*直至回合结束[^。]*(战斗力|打击力)】?\+/.test(c.def.text || '')) {
+          if (!g.myPals(pi).length) return;   // 只会强化到对手：不考虑
+          else if (q.actions.some(x => x.t === 'attack')) h += 30;
+        }
         out.push([i, h]);
       });
       return out.sort((x, y) => y[1] - x[1]).map(x => x[0]);
@@ -123,13 +129,18 @@ class DeepAI extends AI {
     // select
     const base = super.decide(g, pi);
     const out = [base]; const k = JSON.stringify;
+    // 增益类选择：只要有己方候选，就绝不选对方的卡
+    const buff = !harmfulP(q.prompt) && /\+\d|赋予|竖置|回复|获得/.test(q.prompt);
+    const ownU = u => { const c = g.findCard(u); return c && (c.zone === 'base' ? c.ctrl : c.owner) === pi; };
+    const hasOwn = q.cands.some(ownU);
     if (q.max <= 1 && q.cands.length <= 8) {
       const seen = new Map();
       for (const u of q.cands) { const c = g.findCard(u) || g.p.flatMap(p => p.deck).find(x => x.uid === u); const kk = c ? [c.id, c.zone, c.ctrl, c.rested, c.damage].join(':') : u; if (!seen.has(kk)) seen.set(kk, u); }
       for (const u of seen.values()) out.push([u]);
       if (q.min === 0) out.push([]);
     } else if (q.min === 0 && base.length) out.push([]);
-    const s = new Set(); return out.filter(a => { const x = k(a); if (s.has(x)) return false; s.add(x); return true; });
+    const s = new Set(); return out.filter(a => { if (buff && hasOwn && Array.isArray(a) && a.some(u => !ownU(u))) return false; const x = k(a); if (s.has(x)) return false; s.add(x); return true; })
+      .concat(buff && hasOwn && !out.some(a => Array.isArray(a) && a.length && a.every(ownU)) ? [q.cands.filter(ownU).slice(0, Math.max(1, q.min))] : []);
   }
 
   // 白送：攻击帕鲁却打不死、自己还会被反杀（攻击时增益按 +500 宽容估计）
