@@ -8,6 +8,9 @@ const PLAN = {
   t2: ['火灵儿.*发起攻击', '对手玩家', '火麒麟.*发起攻击', '对手玩家'],
   t3: ['电棘鼠.*发起攻击', '对手玩家', '火麒麟.*发起攻击', '对手玩家'],
   t4: ['武器工作台.*起动', '电棘鼠', '猎狼', '火灵儿.*发起攻击', '对手玩家'],
+  ev: ['使用.*来自黑暗', '雷胖达', '火麒麟.*发起攻击', '对手玩家'],
+  gear: ['支付 3 灵魂', '使用.*单发步枪', '火麒麟', '单发步枪.*起动', '雷胖达', '雷胖达.*起动', '雷胖达.*发起攻击', '对手玩家', '火灵儿.*发起攻击', '对手玩家'],
+  def: ['翠叶鼠', '使用.*火焰吐息', '猎狼', '火绒狐.*支付1灵魂@火麒麟', '严冬鹿.*其他手牌@雷胖达', '电棘鼠', '电棘鼠.*发起攻击', '对手玩家'],
   t5: ['电棘鼠.*发起攻击', '对手玩家', '火麒麟.*发起攻击', '对手玩家'],
 };
 const V = process.argv.includes('-v');
@@ -29,7 +32,8 @@ for (const T of TUTORIALS) {
     else {
       const nm = u => { const c = g.findCard(u); return c ? g.cname(c) : String(u); };
       if (plan[0] === '对手玩家' && q.kind !== 'option') plan.shift();   // 只有一个合法目标时不会询问
-      const want = plan[0] ? new RegExp(plan[0]) : null;
+      let want = plan[0] ? new RegExp(plan[0].split('@')[0]) : null;
+      if (plan[0] && plan[0].includes('@')) { const att = g.battle && g.battle.att; if (!att || !g.cname(att).includes(plan[0].split('@')[1])) want = null; }
       if (q.kind === 'main') { const i = want ? q.actions.findIndex(x => want.test(x.label)) : -1; if (i >= 0) { plan.shift(); a = i; } else a = q.actions.findIndex(x => x.t === 'end'); }
       else if (q.kind === 'option') { const i = want ? q.options.findIndex(o => want.test(o)) : -1; if (i >= 0) { plan.shift(); a = i; } else a = 0; }
       else if (q.kind === 'select') { const c = want ? q.cands.filter(u => want.test(nm(u))) : []; if (c.length) { plan.shift(); a = c.slice(0, Math.max(1, q.min || 0)); } else a = q.cands.slice(0, q.min || 0); }

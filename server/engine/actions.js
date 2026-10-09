@@ -4,6 +4,7 @@ const { Game, GAMEOVER } = require('./core');
 const P = Game.prototype;
 
 P.shuffle = function (arr) {
+  if (this.hist) this.leak = this.hist.length;   // 随机结果已产生
   for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(this.rng() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; }
 };
 P.draw = function (pi, n = 1) {

@@ -43,7 +43,7 @@ class Game {
     }
     this.version++;
   }
-  *ask(pi, req) { req.player = pi; return yield req; }
+  *ask(pi, req) { req.player = pi; if (req.view) this.leak = this.hist.length; return yield req; }
   answer(pi, ans) {
     const q = this.pending;
     if (!q || q.player !== pi) throw new Error('现在不是你的操作时机');
@@ -84,10 +84,11 @@ class Game {
     const q = this.pending;
     if (!q || q.player !== pi || this.over) return -1;
     if (q.kind === 'main' && !q.quick) return -1;
+    const leak = this.leak || 0;
     for (let i = this.hist.length - 1; i >= 0; i--) {
       const h = this.hist[i];
       if (h[0] !== pi) { if (strict || h[3]) return -1; continue; }
-      if (h[3] === 'm') return i;
+      if (h[3] === 'm') return leak > i ? -1 : i;
       if (h[3] === 'e') return -1;
     }
     return -1;
@@ -127,6 +128,7 @@ class Game {
 
   // 移动卡牌。to: base/hand/grave/deck/exile/res/none
   move(c, to, opt = {}) {
+    if (c.zone === 'deck' && this.hist) this.leak = this.hist.length;   // 卡组里的卡被看到/取走：此后不可取消
     const from = c.zone;
     const lki = from === 'base' ? this.snapshot(c) : null;
     if (lki && this.battle) this.battle.attStrikeSnap = this.strike(this.battle.att);

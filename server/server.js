@@ -177,7 +177,7 @@ function listRooms() {
   return [...rooms.values()].filter(r => !r.pve && !r.game && r.seats[0] && !r.seats[1]).map(r => ({ code: r.code, host: r.seats[0].name }));
 }
 class Room {
-  constructor(pve) { this.code = code(); this.pve = pve; this.seats = [null, null]; this.game = null; this.ai = null; this.aiTimer = null; this.undos = [3, 3]; this.undoReq = null; rooms.set(this.code, this); }
+  constructor(pve) { this.code = code(); this.pve = pve; this.seats = [null, null]; this.game = null; this.ai = null; this.aiTimer = null; this.undos = [10, 10]; this.undoReq = null; rooms.set(this.code, this); }
   canCancel(i) { return !!(this.game && !this.game.over && this.game.cancelPoint(i, !this.pve) >= 0); }
   doCancel(i) {
     const n = this.game.cancelPoint(i, !this.pve); if (n < 0) return false;
