@@ -16,6 +16,18 @@ function evalOf(ai, g, pi) {
   if (ai.value === 'net' && VN.ready()) { if (g.over) return g.over.winner === pi ? 1000 - g.turnNo : g.over.winner === -1 ? -300 : -1000 + g.turnNo; return 300 * VN.value(g, pi, ai.vfile); }
   return evalM(g, pi);
 }
+// 长线计划加分（价值网络看不到的组合/引擎）：
+//  · 场上有【起】【1回合1次】的资源型建筑（抽卡/素材/食材/灵魂）→ 越早越值
+//  · 卡组里带「冒险的开始」时，场上不同《起始》帕鲁的种类数
+const PLAN_B = /【起】【1回合1次】[^。]*(抽|【素材】|【食材】|灵魂)/;
+function plan(g, pi) {
+  const P = g.p[pi]; let v = 0;
+  const late = Math.max(0, 1 - g.turnNo / 14);
+  for (const c of P.base) if (c.def.kind === 'building' && PLAN_B.test(c.def.text || '')) v += 14 * late;
+  const adv = P.hand.concat(P.deck).some(c => c.id === 'BP01-100');
+  if (adv) { const k = new Set(g.myPals(pi, x => x.def.ja.includes('始まりの')).map(x => x.def.ja)).size; v += [0, 6, 16, 34][Math.min(3, k)]; }
+  return v;
+}
 
 function actHeur(g, pi, a) {
   const L = a.label || '';
@@ -114,6 +126,16 @@ class DeepAI extends AI {
         if (a.t === 'act' && c && /选择1只帕鲁[^。]*直至回合结束[^。]*(战斗力|打击力)】?\+/.test(c.def.text || '')) {
           if (!g.myPals(pi).length) return;   // 只会强化到对手：不考虑
           else if (q.actions.some(x => x.t === 'attack')) h += 30;
+        }
+        // 「冒险的开始」组合：集齐 3 种《起始》帕鲁再用（全体 +1000/打击力 +5）；否则只在本局第一张卡时用来抽 2
+        if (c && a.t === 'play' && c.id === 'BP01-100') {
+          const kinds = new Set(g.myPals(pi, x => x.def.ja.includes('始まりの')).map(x => x.def.ja)).size;
+          const canHit = g.myPals(pi, x => !x.rested).length > 0 && q.actions.some(x => x.t === 'attack');
+          if (kinds >= 3 && canHit) h += 80; else if (g.p[pi].played === 0) h += 5; else return;
+        }
+        if (c && a.t === 'play' && c.zone === 'hand' && c.def.ja && c.def.ja.includes('始まりの') && g.p[pi].hand.some(x => x.id === 'BP01-100')) {
+          const have = new Set(g.myPals(pi, x => x.def.ja.includes('始まりの')).map(x => x.def.ja));
+          if (!have.has(c.def.ja)) h += 25 + have.size * 15;
         }
         out.push([i, h]);
       });
