@@ -74,7 +74,7 @@ const server = http.createServer((req, res) => {
   const url = new URL(req.url, 'http://x');
   if (Accounts.handle(req, res, url, send)) return;
   if (GP.handle(req, res, url, send)) return;
-  if (url.pathname === '/api/cards') return send(res, 200, CARDS_JSON, MIME['.json']);
+  if (url.pathname === '/api/cards') { if (/gzip/.test(req.headers['accept-encoding'] || '')) { CARDS_GZ = CARDS_GZ || require('zlib').gzipSync(CARDS_JSON); res.writeHead(200, { 'Content-Type': MIME['.json'], 'Content-Encoding': 'gzip', 'Cache-Control': 'max-age=600' }); return res.end(CARDS_GZ); } return send(res, 200, CARDS_JSON, MIME['.json']); }
   if (url.pathname === '/api/random-deck') {
     const cols = (url.searchParams.get('colors') || '').split(',').filter(c => ['red', 'blue', 'green', 'purple'].includes(c)).slice(0, 2);
     const mode = url.searchParams.get('mode') || 'true';
@@ -164,10 +164,19 @@ const server = http.createServer((req, res) => {
   if (!f.startsWith(PUB)) return send(res, 403, 'forbidden');
   fs.stat(f, (err, st) => {
     if (err || !st.isFile()) return send(res, 404, 'not found');
-    res.writeHead(200, { 'Content-Type': MIME[path.extname(f)] || 'application/octet-stream', 'Cache-Control': /\.(png|jpg)$/.test(f) ? 'max-age=86400' : 'no-cache' });
+    // 弱网/穿透优化：ETag 协商缓存（未改动的文件只回 304）+ 文本文件 gzip
+    const tag = `"${st.size.toString(36)}-${st.mtimeMs.toString(36)}"`;
+    const head = { 'Content-Type': MIME[path.extname(f)] || 'application/octet-stream', 'Cache-Control': /\.(png|jpg|webp)$/.test(f) ? 'max-age=604800' : 'no-cache', ETag: tag };
+    if (req.headers['if-none-match'] === tag) { res.writeHead(304, head); return res.end(); }
+    if (/\.(js|css|html|json|svg)$/.test(f) && /gzip/.test(req.headers['accept-encoding'] || '')) {
+      res.writeHead(200, Object.assign(head, { 'Content-Encoding': 'gzip', Vary: 'Accept-Encoding' }));
+      return fs.createReadStream(f).pipe(require('zlib').createGzip({ level: 6 })).pipe(res);
+    }
+    res.writeHead(200, Object.assign(head, { 'Content-Length': st.size }));
     fs.createReadStream(f).pipe(res);
   });
 });
+let CARDS_GZ = null;
 function send(res, code, body, type = 'text/plain; charset=utf-8') { res.writeHead(code, { 'Content-Type': type }); res.end(body); }
 
 // ---------- 房间 ----------
