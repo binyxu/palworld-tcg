@@ -301,3 +301,25 @@ body.dragging-now #tutfx{display:none}
 
 #board img{-webkit-user-drag:none;user-select:none}
 #board .pile.deck.can{cursor:grab;touch-action:none}
+
+/* 房间大厅 */
+.lobby{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;width:min(760px,94vw);background:linear-gradient(#2b2420f2,#1a1512f2);border:2px solid var(--gold);border-radius:16px;padding:22px 26px;color:#f3ecdc;display:flex;flex-direction:column;gap:16px;box-shadow:0 10px 40px #0008}
+.lobby .muted{color:#cbb9a0;font-size:13px}.lobby .dim{color:#8d7f6c}
+.lb-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;font-size:18px}.lb-code{font-size:34px;color:#ffd54a;letter-spacing:4px}
+.lb-seats{display:flex;align-items:stretch;gap:14px}.lb-vs{align-self:center;font-size:26px;font-weight:900;color:#ffd54a;text-shadow:0 0 12px #f80}
+.lb-seat,.lb-spec{flex:1;border:2px dashed #ffffff40;border-radius:12px;padding:14px;cursor:pointer;transition:.15s;background:#ffffff08}
+.lb-seat:hover,.lb-spec:hover{border-color:#ffd54a;background:#ffd54a14}
+.lb-seat.full{border-style:solid;border-color:#ffffff60}.lb-seat.ready{border-style:solid;border-color:#5fd36a;box-shadow:0 0 16px #5fd36a55}
+.lb-seat.mine,.lb-spec.mine{outline:2px solid #ffd54a;outline-offset:2px}
+.lb-cap{font-weight:700;color:#ffe7a8;margin-bottom:6px;display:flex;gap:10px;align-items:baseline}
+.lb-name{font-size:22px;font-weight:700;min-height:30px}.lb-st{font-size:13px;color:#cbb9a0;margin-top:2px}.lb-seat.ready .lb-st{color:#7fe08a}
+.lb-me{font-style:normal;font-size:11px;background:#ffd54a;color:#3a2a10;border-radius:6px;padding:0 5px;margin-left:6px;vertical-align:middle}
+.lb-off{font-style:normal;font-size:11px;background:#666;color:#fff;border-radius:6px;padding:0 5px;margin-left:6px}
+.lb-list{display:flex;flex-wrap:wrap;gap:8px}.lb-chip{background:#ffffff14;border-radius:14px;padding:3px 10px}.lb-chip.ready{background:#5fd36a33}
+.lb-foot{display:flex;gap:10px;align-items:center}.lb-foot .lb-ready{font-size:17px;padding:8px 30px}
+.specbadge{background:#5ab0ff33;border:1px solid #5ab0ff;color:#dff;border-radius:8px;padding:3px 9px;font-size:13px;align-self:center}
+@media (max-width:700px){.lb-seats{flex-direction:column}.lb-vs{font-size:18px}}
+.specbox{position:absolute;left:calc(var(--cw,110px) + 120px);top:6px;z-index:40;background:#1a1512e8;border:1px solid #5ab0ff;border-radius:10px;padding:6px 10px;color:#f3ecdc;font-size:12px;display:flex;flex-direction:column;gap:4px}
+.specbox .sp-row{display:flex;align-items:center;gap:4px}.specbox .sp-row span{width:76px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#cfe6ff}
+.specbox img{width:30px;height:42px;object-fit:cover;border-radius:3px}.specbox img.lk{box-shadow:0 0 0 2px #ffd54a}
+@media (max-width:900px){.specbox{left:auto;right:4px;top:auto;bottom:40%;transform:scale(.85);transform-origin:right}}

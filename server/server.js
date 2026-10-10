@@ -174,10 +174,10 @@ function send(res, code, body, type = 'text/plain; charset=utf-8') { res.writeHe
 const rooms = new Map();
 function code() { let c; do { c = String(Math.floor(1000 + Math.random() * 9000)); } while (rooms.has(c)); return c; }
 function listRooms() {
-  return [...rooms.values()].filter(r => !r.pve && !r.game && r.seats[0] && !r.seats[1]).map(r => ({ code: r.code, host: r.seats[0].name }));
+  return [...rooms.values()].filter(r => !r.pve && r.members.some(x => x.ws && x.ws.open)).map(r => ({ code: r.code, host: (r.members[0] || {}).name, n: r.members.filter(x => x.ws && x.ws.open).length, players: r.seats.filter(Boolean).length, playing: !!(r.game && !r.game.over) }));
 }
 class Room {
-  constructor(pve) { this.code = code(); this.pve = pve; this.seats = [null, null]; this.game = null; this.ai = null; this.aiTimer = null; this.undos = [10, 10]; this.undoReq = null; rooms.set(this.code, this); }
+  constructor(pve) { this.code = code(); this.pve = pve; this.seats = [null, null]; this.members = []; this.game = null; this.ai = null; this.aiTimer = null; this.undos = [10, 10]; this.undoReq = null; rooms.set(this.code, this); }
   canCancel(i) { return !!(this.game && !this.game.over && this.game.cancelPoint(i, !this.pve) >= 0); }
   doCancel(i) {
     const n = this.game.cancelPoint(i, !this.pve); if (n < 0) return false;
@@ -208,13 +208,46 @@ class Room {
       const w = this.game.over.winner;
       this.gp.result = GP.settle(this.gp.run, this.gp.gameId, w === 0, w === 0 ? '' : this.game.over.reason);
     }
+    if (!this.pve && !this.game) return this.lobby();
+    if (!this.pve && this.game) {
+      const v = Object.assign(viewFor(this.game, 0, { all: true }), { gid: this.gid, spectator: true, deckTop: this.game.p.map(p => p.deck.slice(0, 5).map(c => c.id)), undos: 0, canUndo: false, canCancel: false, undoReq: null });
+      if (v.ask) { v.waiting = this.game.p[this.game.pending.player].name; v.ask = null; }
+      const seatsV = this.seats.map(x => x && { name: x.name, ready: true, online: !!(x.ws && x.ws.open) });
+      for (const m of this.members) if (m.seat == null && m.ws) m.ws.send({ type: 'state', room: this.code, state: v, seats: seatsV, specN: this.specN() });
+    }
     for (let i = 0; i < 2; i++) {
       const s = this.seats[i];
-      if (s && s.ws) s.ws.send({ type: 'state', room: this.code, state: this.game ? Object.assign(viewFor(this.game, i, { all: !!(this.puzzle || this.tutorial) }), this.tutorial ? { tutorial: { id: this.tutorial.id, no: this.tutorial.no, title: this.tutorial.title, steps: this.tutorial.steps, total: TUTORIALS.length, next: (TUTORIALS[this.tutorial.no] || {}).id || null, limit: this.game.limit }, deckTop: this.game.p.map(p => p.deck.slice(0, 3).map(c => c.id)) } : {}, this.puzzle ? { puzzle: { id: this.puzzle.id, title: this.puzzle.title, desc: this.puzzle.desc, hint: this.puzzle.hint, limit: this.game.limit }, deckTop: this.game.p.map(p => p.deck.slice(0, 10).map(c => c.id)) } : {}, { gid: this.gid, pve: this.pve, gp: this.gp ? { style: this.gp.style, result: this.gp.result || null } : undefined, undos: this.undos[i], canUndo: this.canUndo(i), canCancel: this.canCancel(i), undoReq: this.undoReq === null ? null : this.undoReq === i ? 'mine' : 'theirs' }) : null, seats: this.seats.map(x => x && { name: x.name, ready: !!x.deck, online: !!(x.ws && x.ws.open) }) });
+      if (s && s.ws) s.ws.send({ type: 'state', specN: this.specN(), room: this.code, state: this.game ? Object.assign(viewFor(this.game, i, { all: !!(this.puzzle || this.tutorial) }), this.tutorial ? { tutorial: { id: this.tutorial.id, no: this.tutorial.no, title: this.tutorial.title, steps: this.tutorial.steps, total: TUTORIALS.length, next: (TUTORIALS[this.tutorial.no] || {}).id || null, limit: this.game.limit }, deckTop: this.game.p.map(p => p.deck.slice(0, 3).map(c => c.id)) } : {}, this.puzzle ? { puzzle: { id: this.puzzle.id, title: this.puzzle.title, desc: this.puzzle.desc, hint: this.puzzle.hint, limit: this.game.limit }, deckTop: this.game.p.map(p => p.deck.slice(0, 10).map(c => c.id)) } : {}, { gid: this.gid, pve: this.pve, gp: this.gp ? { style: this.gp.style, result: this.gp.result || null } : undefined, undos: this.undos[i], canUndo: this.canUndo(i), canCancel: this.canCancel(i), undoReq: this.undoReq === null ? null : this.undoReq === i ? 'mine' : 'theirs' }) : null, seats: this.seats.map(x => x && { name: x.name, ready: !!x.deck, online: !!(x.ws && x.ws.open) }) });
     }
     this.scheduleAI();
   }
+  specN() { return this.members.filter(m => m.seat == null && m.ws && m.ws.open).length; }
+  // 房间大厅：对战席 ×2 + 观战席；所有在线成员都准备后开局
+  lobby() {
+    const ms = this.members.map(m => ({ name: m.name, seat: m.seat == null ? null : m.seat, ready: !!m.ready, online: !!(m.ws && m.ws.open) }));
+    this.members.forEach((m, k) => m.ws && m.ws.send({ type: 'lobby', room: this.code, members: ms, me: k }));
+  }
+  addMember(m) {
+    const free = [0, 1].find(i => !this.seats[i]);
+    m.seat = this.game || free === undefined ? null : free; m.ready = false;
+    if (m.seat != null) this.seats[m.seat] = m;
+    this.members.push(m);
+  }
+  setSeat(m, to) {
+    if (this.game) throw new Error('对局进行中，无法换座');
+    if (to === 0 || to === 1) { if (this.seats[to] && this.seats[to] !== m) throw new Error('该对战席已有人'); }
+    else to = null;
+    if (m.seat != null) this.seats[m.seat] = null;
+    m.seat = to; if (to != null) this.seats[to] = m;
+    this.members.forEach(x => x.ready = false);
+  }
+  tryStart() {
+    const on = this.members.filter(x => x.ws && x.ws.open);
+    if (this.seats[0] && this.seats[1] && this.seats.every(x => x.ws && x.ws.open) && on.every(x => x.ready)) { this.start(); return true; }
+    return false;
+  }
   start(scenario, seed) {
+    if (this.pve && this.seats[0]) { this.seats[0].seat = 0; this.members = [this.seats[0]]; }
     this.gid = crypto.randomUUID(); this.created = Date.now(); this.undoLog = [];
     const decks = this.seats.map(s => s.deck);
     this.game = new Game({ db, decks, names: this.seats.map(s => s.name), scenario, seed });
@@ -223,6 +256,7 @@ class Room {
   emote(seat, kind, i) {
     const from = this.seats[seat] && this.seats[seat].name;
     for (let k = 0; k < 2; k++) { const s = this.seats[k]; if (s && s.ws) s.ws.send({ type: 'emote', seat, me: k === seat, from, kind, i }); }
+    for (const m of this.members) if (m.seat == null && m.ws) m.ws.send({ type: 'emote', seat, me: seat === 0, from, kind, i });
   }
   scheduleAI() {
     if (!this.ai || !this.game || this.game.over || this.aiTimer) return;
@@ -236,10 +270,13 @@ class Room {
       this.broadcast();
     }, +process.env.AI_DELAY || 750);
   }
-  leave(i) {
-    const s = this.seats[i]; if (!s) return;
-    s.ws = null;
-    if (!this.seats.some(x => x && x.ws && x.ws.open)) setTimeout(() => { if (!this.seats.some(x => x && x.ws && x.ws.open)) { clearTimeout(this.aiTimer); rooms.delete(this.code); } }, 5 * 60 * 1000);
+  leave(m) {
+    if (!m) return;
+    m.ws = null;
+    // 大厅阶段离开：直接让出座位；对局中保留座位以便重连
+    if (!this.pve && (!this.game || m.seat == null)) { if (m.seat != null && !this.game) this.seats[m.seat] = null; this.members = this.members.filter(x => x !== m); if (!this.game) this.members.forEach(x => x.ready = false); }
+    const alive = () => this.members.some(x => x && x.ws && x.ws.open) || this.seats.some(x => x && x.ws && x.ws.open);
+    if (!alive()) setTimeout(() => { if (!alive()) { clearTimeout(this.aiTimer); rooms.delete(this.code); } }, 5 * 60 * 1000);
     else this.broadcast();
   }
 }
@@ -247,11 +284,13 @@ const AI_NAMES = { easy: '电脑（简单）', normal: '电脑（普通）', har
 
 server.on('upgrade', (req, socket) => {
   const ws = upgrade(req, socket); if (!ws) return;
-  let room = null, seat = -1;
+  let room = null, seat = -1, mem = null;
   const err = m => ws.send({ type: 'error', msg: m });
   ws.on('message', raw => {
     let m; try { m = JSON.parse(raw); } catch (e) { return; }
     try {
+      if (!mem && room && room.pve) mem = room.seats[0];
+      if (mem && room && !room.pve) seat = mem.seat == null ? -1 : mem.seat;
       if (m.type === 'pve' || m.type === 'create' || m.type === 'join') {
         if (m.type === 'pve' && m.tutorial) {
           const T = TUTORIALS.find(x => x.id === m.tutorial); if (!T) return err('教程不存在');
@@ -294,24 +333,38 @@ server.on('upgrade', (req, socket) => {
           room.ai = lv === 'hell' ? new DeepAI(Date.now(), { cheat: true }) : lv === 'hard' ? new DeepAI(Date.now()) : new AI(lv, Date.now()); room.level = lv;
           room.start(process.env.DEV && m.scenario ? m.scenario : undefined);
         } else if (m.type === 'create') {
-          room = new Room(false); seat = 0;
-          room.seats[0] = { name, deck: m.deck, ws, token: m.token };
+          room = new Room(false);
+          mem = { name, deck: m.deck, ws, token: m.token }; room.addMember(mem); seat = mem.seat;
           room.broadcast();
         } else {
           const r = rooms.get(String(m.code));
           if (!r || r.pve) return err('房间不存在');
-          if (r.seats[1]) return err('房间已满');
-          room = r; seat = 1;
-          room.seats[1] = { name, deck: m.deck, ws, token: m.token };
-          room.start();
+          room = r;
+          const old = m.token && r.members.find(x => x.token === m.token);
+          if (old) { mem = old; mem.ws = ws; if (!r.game) mem.deck = m.deck; }
+          else { mem = { name, deck: m.deck, ws, token: m.token }; r.addMember(mem); }
+          seat = mem.seat == null ? -1 : mem.seat;
+          room.broadcast();
         }
       } else if (m.type === 'rejoin') {
         const r = rooms.get(String(m.code));
-        const i = r ? r.seats.findIndex(s => s && s.token && s.token === m.token) : -1;
-        if (i < 0) return ws.send({ type: 'rejoinFail' });
-        room = r; seat = i; r.seats[i].ws = ws; r.broadcast();
+        const x = r ? (r.members.find(s => s.token && s.token === m.token) || r.seats.find(s => s && s.token && s.token === m.token)) : null;
+        if (!x) return ws.send({ type: 'rejoinFail' });
+        room = r; mem = x; seat = x.seat == null ? -1 : x.seat; x.ws = ws; if (!r.members.includes(x)) r.members.push(x); r.broadcast();
       } else if (!room) {
         return err('尚未加入房间');
+      } else if (m.type === 'seat') {
+        room.setSeat(mem, m.to); room.broadcast();
+      } else if (m.type === 'ready') {
+        if (room.game) return; mem.ready = !!m.ready; if (!room.tryStart()) room.broadcast();
+      } else if (m.type === 'rematch') {
+        if (room.pve || !room.game || !room.game.over) return;
+        room.game = null; room.undos = [10, 10]; room.undoReq = null; room.members.forEach(x => x.ready = false); room.broadcast();
+      } else if (m.type === 'chat') {
+        const txt = String(m.text || '').slice(0, 200), from = (mem ? mem.name : '?') + (seat < 0 && !room.pve ? '（观战）' : '');
+        for (const s of new Set([...room.members, ...room.seats])) if (s && s.ws) s.ws.send({ type: 'chat', from, text: txt });
+      } else if (seat < 0 && m.type !== 'leave') {
+        return err('观战中无法操作');
       } else if (m.type === 'answer') {
         const g = room.game;
         if (!g || g.over) return;
@@ -323,7 +376,7 @@ server.on('upgrade', (req, socket) => {
         if (!room.doCancel(seat)) return err('当前没有可取消的操作');
         room.broadcast();
       } else if (m.type === 'undo') {
-        if (!room.canUndo(seat)) return err('当前无法悔棋（每局最多 3 次）');
+        if (!room.canUndo(seat)) return err('当前无法悔棋（每局最多 10 次）');
         if (room.pve) { room.doUndo(seat); room.broadcast(); }
         else { room.undoReq = seat; room.broadcast(); }
       } else if (m.type === 'undoReply') {
@@ -333,9 +386,6 @@ server.on('upgrade', (req, socket) => {
         room.broadcast();
       } else if (m.type === 'concede') {
         if (room.game && !room.game.over) { room.game.concede(seat); room.broadcast(); }
-      } else if (m.type === 'chat') {
-        const txt = String(m.text || '').slice(0, 200);
-        for (const s of room.seats) if (s && s.ws) s.ws.send({ type: 'chat', from: room.seats[seat].name, text: txt });
       } else if (m.type === 'emote') {
         const kind = m.kind === 'emoji' ? 'emoji' : 'taunt', i = m.i | 0;
         if (!(i >= 0 && i < EMOTES[kind].length)) return;
@@ -352,14 +402,14 @@ server.on('upgrade', (req, socket) => {
           setTimeout(() => room.seats[0] && room.emote(1, k2, j), 900 + Math.random() * 900);
         }
       } else if (m.type === 'leave') {
-        room.leave(seat); room = null;
+        room.leave(mem); room = null; mem = null;
       }
     } catch (e) {
       err(e.message);
       if (room) room.broadcast();
     }
   });
-  ws.on('close', () => { if (room) room.leave(seat); });
+  ws.on('close', () => { const x = mem || (room && room.seats[0]); if (room && x && x.ws === ws) room.leave(x); });
 });
 
 server.listen(PORT, () => console.log(`幻兽帕鲁卡牌游戏 对战平台已启动：http://localhost:${PORT}`));

@@ -137,7 +137,7 @@ async function refreshHome() {
   showInfo();
   try {
     const rs = await (await fetch('/api/rooms')).json();
-    $('#room-list').innerHTML = rs.length ? rs.map(r => `<li>房间 ${r.code}（${esc(r.host)}） <button data-join="${r.code}">加入</button></li>`).join('') : '<li>暂无</li>';
+    $('#room-list').innerHTML = rs.length ? rs.map(r => `<li>房间 ${r.code}（${esc(r.host || '')}）<span class="muted"> ${r.n} 人${r.playing ? ' · 对战中' : ` · 对战席 ${r.players}/2`}</span> <button data-join="${r.code}">${r.playing || r.players >= 2 ? '👁 观战' : '加入'}</button></li>`).join('') : '<li>暂无</li>';
   } catch (e) { /* ignore */ }
 }
 async function pickedDeck() {
@@ -174,9 +174,10 @@ function connect(first) {
     const m = JSON.parse(e.data);
     if (m.type === 'error') toast(m.msg);
     else if (m.type === 'state') {
-      if (m.state && m.state.gid) { const L = JSON.parse(localStorage.getItem('ptcg_games') || '[]'); const nm = m.state.players.map(p => p.name).join(' vs '); const i = L.findIndex(x => x.id === m.state.gid);
+      if (m.state && m.state.gid && !m.state.spectator) { const L = JSON.parse(localStorage.getItem('ptcg_games') || '[]'); const nm = m.state.players.map(p => p.name).join(' vs '); const i = L.findIndex(x => x.id === m.state.gid);
         const e = { id: m.state.gid, nm, t: Date.now(), res: m.state.over ? (m.state.over.winner === m.state.me ? '胜' : m.state.over.winner === -1 ? '平' : '负') : '进行中' };
         if (i >= 0) L[i] = e; else L.unshift(e); localStorage.setItem('ptcg_games', JSON.stringify(L.slice(0, 500))); } App.room = m.room; sessionStorage.setItem('ptcg_room', m.room); show('game'); Game.update(m); }
+    else if (m.type === 'lobby') { App.room = m.room; sessionStorage.setItem('ptcg_room', m.room); show('game'); Game.lobby(m); }
     else if (m.type === 'chat') Game.chat(m);
     else if (m.type === 'emote') Game.emote(m);
     else if (m.type === 'rejoinFail') sessionStorage.removeItem('ptcg_room');

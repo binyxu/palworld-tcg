@@ -8,6 +8,33 @@ const Game = {
 
   // ---------- 状态更新（排队，保证每一步动画可见） ----------
   update(m) { this.queue.push(m); if (!this.busy) this.pump(); },
+  // ---------- 房间大厅：对战席 / 观战席 ----------
+  lobby(m) {
+    this.queue = []; this.busy = false; this.last = null; this.prev = null; this.overReady = false;
+    $$('#tutfx,.tutbox,#batarrow,#arrow').forEach(x => x.remove());
+    const me = m.members[m.me] || {}, seatOf = i => m.members.find(x => x.seat === i);
+    const specs = m.members.filter(x => x.seat == null);
+    const tag = x => `${esc(x.name)}${x === me ? '<i class="lb-me">我</i>' : ''}${x.online ? '' : '<i class="lb-off">离线</i>'}`;
+    const seatCard = i => { const x = seatOf(i);
+      return `<div class="lb-seat ${x ? (x.ready ? 'ready' : 'full') : 'empty'} ${x === me ? 'mine' : ''}" data-seat="${i}">
+        <div class="lb-cap">⚔ 对战席 ${i + 1}</div>
+        ${x ? `<div class="lb-name">${tag(x)}</div><div class="lb-st">${x.ready ? '✔ 已准备' : '… 未准备'}</div>` : `<div class="lb-name dim">空位</div><div class="lb-st">${me.seat === i ? '' : '点击坐下'}</div>`}
+      </div>`; };
+    const allReady = m.members.filter(x => x.online).every(x => x.ready), full = seatOf(0) && seatOf(1);
+    $('#board').innerHTML = `<div class="lobby">
+      <div class="lb-head"><div>房间 <b class="lb-code">${m.room}</b></div><div class="muted">把房间号告诉好友，人数不限：两人对战，其余观战。所有人准备后自动开始。</div></div>
+      <div class="lb-seats">${seatCard(0)}<div class="lb-vs">VS</div>${seatCard(1)}</div>
+      <div class="lb-spec ${me.seat == null ? 'mine' : ''}" data-seat="spec"><div class="lb-cap">👁 观战席（${specs.length}）<span class="muted">可看双方手牌与卡组</span></div>
+        <div class="lb-list">${specs.length ? specs.map(x => `<span class="lb-chip ${x.ready ? 'ready' : ''}">${tag(x)} ${x.ready ? '✔' : ''}</span>`).join('') : '<span class="dim">暂无</span>'}</div>
+        ${me.seat != null ? '<div class="lb-st">点击坐到观战席</div>' : ''}</div>
+      <div class="lb-foot">
+        <button class="${me.ready ? '' : 'primary'} lb-ready">${me.ready ? '取消准备' : '✔ 准备'}</button>
+        <button onclick="Game.leave()">离开房间</button>
+        <div class="muted">${!full ? '等待凑齐两位对战者……' : allReady ? '即将开始……' : '等待所有人准备……'}</div>
+      </div></div>`;
+    $$('#board [data-seat]').forEach(el => el.onclick = () => { const t = el.dataset.seat; const to = t === 'spec' ? null : +t; if ((me.seat == null ? null : me.seat) === to) return; send({ type: 'seat', to }); });
+    $('#board .lb-ready').onclick = () => send({ type: 'ready', ready: !me.ready });
+  },
   pump() {
     const m = this.queue.shift(); if (!m) { this.busy = false; return; }
     this.busy = true;
@@ -142,10 +169,10 @@ const Game = {
       ${lane(me, 'pal', `我的据点 · 帕鲁 ${me.base.filter(c => c.kind === 'pal').length}/5`, 'm')}${lane(me, 'bld', '我的 · 建筑物/装备', 'm')}${souls(me, 'me')}${piles(me, 'me')}
       <div class="hand a-mhand" id="hand">${me.hand.map((c, i) => this.cardHtml(c, { zone: 'hand', style: this.fan(hn, i, 3.5) })).join('')}</div>
       ${this.trayHtml(s)}
-      ${s.puzzle ? this.puzzleHtml(s) : ''}${s.tutorial ? Tutorial.html(s) : ''}
+      ${s.puzzle ? this.puzzleHtml(s) : ''}${s.tutorial ? Tutorial.html(s) : ''}${s.spectator && s.deckTop ? this.specHtml(s) : ''}
       ${s.over && (this.overReady || this.replay) ? this.resultHtml(s) : ''}
     </div>
-    ${this.replay ? this.replayBar() : ''}<div class="gtools" ${this.replay ? 'style="display:none"' : ''}><button id="undobtn" ${s.canUndo && !s.undoReq ? '' : 'disabled'} title="每局最多 10 次${!s.pve ? '，联机需对方同意' : ''}">↶ 悔棋<span class="badge">${s.undos ?? 0}</span></button>${s.gid ? `<button id="gidbtn" title="点击复制对局 ID，用于复盘或反馈问题">🆔 ${s.gid.slice(0, 8)}</button>` : ''}<button onclick="Game.fullscreen()">⛶ 全屏</button><button id="sidebtn">☰ 记录/聊天${this.unread ? `<span class="badge">${this.unread}</span>` : ''}</button>${s.over ? '' : '<button id="concede">🏳 投降</button>'}</div>
+    ${this.replay ? this.replayBar() : ''}<div class="gtools" ${this.replay ? 'style="display:none"' : ''}>${s.spectator ? `<span class="specbadge">👁 观战中</span>` : ''}${!s.pve && this.last.specN ? `<span class="specbadge" title="观战人数">👁 ${this.last.specN}</span>` : ''}<button id="undobtn" ${s.spectator ? 'style="display:none"' : ''} ${s.canUndo && !s.undoReq ? '' : 'disabled'} title="每局最多 10 次${!s.pve ? '，联机需对方同意' : ''}">↶ 悔棋<span class="badge">${s.undos ?? 0}</span></button>${s.gid ? `<button id="gidbtn" title="点击复制对局 ID，用于复盘或反馈问题">🆔 ${s.gid.slice(0, 8)}</button>` : ''}<button onclick="Game.fullscreen()">⛶ 全屏</button><button id="sidebtn">☰ 记录/聊天${this.unread ? `<span class="badge">${this.unread}</span>` : ''}</button>${s.spectator ? '<button onclick="Game.leave()">🚪 离开</button>' : s.over ? '' : '<button id="concede">🏳 投降</button>'}</div>
     ${s.undoReq === 'theirs' ? `<div class="undoask"><b>对手申请悔棋</b><div class="muted" style="color:#cbb">同意后对手将撤回上一步操作</div><div class="row"><button class="primary" data-undo="1">同意</button><button data-undo="0">拒绝</button></div></div>` : ''}
     <div class="sidebar ${this.sideOpen ? 'open' : ''}"><button class="x">❯</button>
       <div class="tools"><button onclick="Game.fullscreen()">⛶ 全屏</button>${s.over ? '<button onclick="Game.leave()">${s.gp ? "返回大奖赛" : "返回"}</button>' : ''}</div>
@@ -202,9 +229,16 @@ const Game = {
       <div class="why">${over ? '大奖赛结束！最终战绩 ' + r.wins + ' 胜' : '剩余 ' + (r.maxLoss - r.losses) + ' 条命'}</div>
       ${over ? '' : `<button class="primary" style="font-size:18px;padding:10px 36px;margin:6px" onclick="Game.leave();setTimeout(()=>GP.next(),300)">⚔ 下一场</button>`}</div>`;
   },
+  specHtml(s) {
+    const row = (ids, who) => `<div class="sp-row"><span>${esc(who)}</span>${ids.map((id, i) => `<img class="${(App.byId[id] || {}).lucky ? 'lk' : ''}" src="${cardImg(id)}" data-zoom="${id}" title="卡组第${i + 1}张">`).join('') || '<i>空</i>'}</div>`;
+    return `<div class="specbox"><b>👁 卡组顶（从左往右）</b>${row(s.deckTop[1], s.players[1].name)}${row(s.deckTop[0], s.players[0].name)}</div>`;
+  },
   resultHtml(s) {
     const w = s.over.winner, cls = w === s.me ? 'win' : 'lose';
-    return `<div class="result"><div class="big ${w === -1 ? 'lose' : cls}">${w === -1 ? '平 局' : w === s.me ? '胜 利' : '败 北'}</div><div class="why">${esc(s.over.reason)}</div>${s.puzzle ? this.puzzleResult(s) : ''}${s.tutorial ? Tutorial.result(s) : ''}${s.gp && s.gp.result ? this.gpResult(s) : ''}${s.gid && !this.replay ? `<div class="why" style="font-size:13px">对局 ID：<code>${s.gid}</code>　<button onclick="Game.openReplay('${s.gid}')">📼 复盘本局</button></div>` : ''}<button class="primary" style="font-size:18px;padding:10px 36px" onclick="Game.leave()">${s.gp ? "返回大奖赛" : "返回"}</button></div>`;
+    const pvp = !s.pve && !this.replay;
+    const again = pvp ? `<button class="primary" style="font-size:18px;padding:10px 30px;margin-right:8px" onclick="send({type:'rematch'})">🔁 回到房间再来一局</button>` : '';
+    if (s.spectator) return `<div class="result"><div class="big win">${w === -1 ? '平 局' : esc(s.players[w === s.me ? 0 : 1].name) + ' 获胜'}</div><div class="why">${esc(s.over.reason)}</div>${s.gid ? `<div class="why" style="font-size:13px">对局 ID：<code>${s.gid}</code>　<button onclick="Game.openReplay('${s.gid}')">📼 复盘本局</button></div>` : ''}${again}<button style="font-size:18px;padding:10px 30px" onclick="Game.leave()">离开</button></div>`;
+    return `<div class="result"><div class="big ${w === -1 ? 'lose' : cls}">${w === -1 ? '平 局' : w === s.me ? '胜 利' : '败 北'}</div><div class="why">${esc(s.over.reason)}</div>${s.puzzle ? this.puzzleResult(s) : ''}${s.tutorial ? Tutorial.result(s) : ''}${s.gp && s.gp.result ? this.gpResult(s) : ''}${s.gid && !this.replay ? `<div class="why" style="font-size:13px">对局 ID：<code>${s.gid}</code>　<button onclick="Game.openReplay('${s.gid}')">📼 复盘本局</button></div>` : ''}<button class="primary" style="font-size:18px;padding:10px 36px" onclick="Game.leave()">${s.gp ? "返回大奖赛" : pvp ? "离开房间" : "返回"}</button></div>`.replace('<button class="primary" style="font-size:18px;padding:10px 36px" onclick="Game.leave()">', again + '<button class="primary" style="font-size:18px;padding:10px 36px" onclick="Game.leave()">');
   },
   onBoard(uid) { const s = this.last.state; return s.players.some(p => p.base.some(c => c.uid === uid) || (p.hand || []).some(c => c.uid === uid)); },
 
